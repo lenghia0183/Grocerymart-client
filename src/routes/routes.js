@@ -19,6 +19,7 @@ const publicRoutes = [
     {
         path: config.routes.notFound,
         element: NotFound,
+        layout: null,
     },
 ];
 
