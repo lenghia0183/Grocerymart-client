@@ -1,0 +1,74 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.wrapper {
+    display: flex;
+    height: 100%;
+    background-color: var(--categorise-bg-color);
+    box-shadow: 0px 20px 60px 10px var(--categorise-shadow-color);
+    border-radius: 16px;
+    &:hover {
+        background-color: var(--categorise-bg-color-hover);
+    }
+    &:hover .thumbnail {
+        transform: scale(1.1);
+    }
+    &:hover .price {
+        font-size: 2.6rem;
+    }
+    &:hover .desc {
+        font-size: 1.8rem;
+    }
+}
+
+.inner {
+    height: 100%;
+    padding: 20px 26px 20px 20px;
+    display: flex;
+    @include media-breakpoint-down(lg) {
+        flex-direction: column;
+    }
+
+    @include media-breakpoint-down(md) {
+        flex-direction: row;
+    }
+}
+
+.thumbnail {
+    background-color: var(--categorise-bg-thumbnail-color);
+    width: 116px;
+    height: 116px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 10px;
+
+    @include media-breakpoint-down(lg) {
+        width: 100%;
+        height: auto;
+    }
+    @include media-breakpoint-down(md) {
+        width: 116px;
+        height: 116px;
+    }
+}
+
+.info {
+    margin-left: 20px;
+
+    .price {
+        color: var(--primary-text-color);
+        font-size: 2.2rem;
+        font-weight: 700;
+        // color: var(--black);
+        transition: transform 0.3s ease;
+    }
+
+    .desc {
+        margin-top: 6px;
+        font-weight: 400;
+        font-size: 1.6rem;
+        color: var(--primary-text-color);
+        transition: transform 0.3s ease;
+    }
+}

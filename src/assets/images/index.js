@@ -1,0 +1,26 @@
+const images = {
+  logo: require('./logo.png'),
+  arrowDown: require('./arrow-down.svg').default,
+  slideShow1: require('./slide-show1.png'),
+  slideShow2: require('./slide-show2.jpg'),
+  slideShow3: require('./slide-show3.jpg'),
+  categorise1: require('./categorise1.png'),
+  categorise2: require('./categorise2.png'),
+  categorise3: require('./categorise3.png'),
+  productCard1: require('./ProductCard1.png'),
+  productCard2: require('./ProductCard2.png'),
+  productCard3: require('./ProductCard3.png'),
+  productCard4: require('./ProductCard4.png'),
+  signIn: require('./sign-in.png'),
+  productImage1: require('./product-img1.png'),
+  avatar1: require('./avatar1.png'),
+  avatar2: require('./avatar2.png'),
+  avatar3: require('./avatar3.png'),
+  coverImage: require('./cover-image.avif'),
+  card1: require('./card1.png'),
+  card2: require('./card2.png'),
+  addNewCard: require('./addNewCard.png'),
+  gift: require('./gift.png'),
+};
+
+export default images;

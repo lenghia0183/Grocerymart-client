@@ -1,0 +1,131 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.wrapper {
+    & .form {
+        margin-top: 60px;
+
+        & .form-group {
+            position: relative;
+            margin-bottom: 30px;
+
+            &:last-child {
+                margin-bottom: 21px;
+            }
+        }
+
+        & input {
+            outline: none;
+            width: 100%;
+            height: 50px;
+            font-size: 1.8rem;
+            padding: 12px, 170px, 12px, 12px;
+            border-radius: 10px;
+            border: 1px solid var(--login-input-boder-color);
+            padding: 12px;
+            background-color: transparent;
+            color: var(--primary-text-color);
+            &::placeholder {
+                color: transparent;
+            }
+
+            &:not(:placeholder-shown) + label {
+                color: transparent;
+            }
+        }
+
+        & label {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 15px;
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 26px;
+            color: #d2d1d6;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        .icon {
+            position: absolute;
+            top: 50%;
+            right: 18px;
+            transform: translateY(-50%);
+        }
+    }
+
+    & .option-group {
+        display: flex;
+        justify-content: space-between;
+        & .option-left {
+            display: flex;
+            & label {
+                margin-left: 10px;
+                font-size: 1.5rem;
+                font-weight: 500;
+                color: #9e9da8;
+            }
+        }
+
+        & .option-right {
+            color: var(--primary-text-color);
+        }
+    }
+
+    & .buttons {
+        margin-top: 50px;
+
+        & .sign-up-btn {
+            background-color: #ffb700;
+            margin-bottom: 30px;
+        }
+
+        & .gmail-btn {
+            color: var(--primary-text-color);
+        }
+    }
+
+    & .register-section {
+        display: flex;
+        justify-content: center;
+        margin-top: 108px;
+
+        & .no-account {
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: #9e9da8;
+        }
+
+        & .sign-in-link {
+            font-size: 1.8rem;
+            font-weight: 500;
+            color: #0071dc;
+            margin-left: 10px;
+        }
+    }
+    & .logo {
+        top: 5%;
+        left: 50px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+
+    & .title {
+        margin-top: 50px;
+        font-size: 3rem;
+        font-weight: 500;
+        text-align: center;
+        color: var(--primary-text-color);
+    }
+
+    & .right-desc {
+        width: 460px;
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-top: 10px;
+        color: #9e9da8;
+    }
+}

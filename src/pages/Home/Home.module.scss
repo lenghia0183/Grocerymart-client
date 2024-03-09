@@ -1,0 +1,40 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+.home-page-wrapper {
+  background-color: var(--home-page-bg-color);
+  padding-bottom: 30px;
+}
+
+.container {
+  padding-top: 3%;
+}
+
+.browse-categories {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.categorise-wrapper {
+}
+
+.title-product {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary-text-color);
+  margin-top: 40px;
+  margin-bottom: 21px;
+}
+
+.product-card-warraper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 30px;
+}

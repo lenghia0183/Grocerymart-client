@@ -1,0 +1,46 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+.title-container {
+  display: flex;
+  color: var(--primary-text-color);
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 21px;
+}
+
+.title-product {
+  display: block;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--primary-text-color);
+}
+
+.filter-container {
+  display: flex;
+  font-size: 1.6rem;
+  font-weight: 500;
+  gap: 14px;
+  align-items: center;
+  background-color: var(--product-card-bg-color);
+  padding: 6px 12px;
+  border-radius: 6px;
+  box-shadow: 0 10px 60px 20px var(--product-card-shadow-color);
+
+  &:hover {
+    background-color: var(--product-card-bg-color-hover);
+  }
+
+  & span {
+    display: block;
+  }
+}
+
+.product-card-warraper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 30px;
+}

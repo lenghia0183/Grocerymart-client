@@ -1,0 +1,66 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+.menu-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 540px;
+    align-content: space-between;
+    min-width: 1200px;
+    // background-color: var(--white);
+    padding: 30px 62px 0px 30px;
+    box-shadow: 0px 40px 90px 20px #c8c8c866;
+    background-color: var(--header-mega-menu-bg-color);
+    @include media-breakpoint-down(lg) {
+        // bottom: -1px;
+        // position: absolute;
+        width: 100%;
+        margin-left: 20px;
+        flex-wrap: nowrap;
+        min-width: fit-content;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .menu-group {
+        @include media-breakpoint-down(lg) {
+            bottom: -1px;
+            position: absolute;
+            // max-width: max-content;
+        }
+    }
+
+    .group-item {
+        max-height: max-content;
+    }
+    .menu-group.separate {
+        position: relative;
+
+        // margin-left: 77px;
+        &::after {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 1px;
+            top: 0px;
+            right: -30px;
+            background-color: var(--header-mega-menu-separate-color);
+        }
+    }
+
+    .last-child {
+        margin-bottom: 30px;
+    }
+}
+
+//dropdow menu for mobile
+
+.group-name-item {
+    display: none;
+}
+
+.group-name-item-open {
+    display: block;
+}

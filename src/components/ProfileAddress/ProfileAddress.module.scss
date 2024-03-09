@@ -1,0 +1,92 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+.wrapper {
+  width: 100%;
+  color: var(--primary-text-color);
+}
+
+.arrow-back-icon {
+  color: var(--primary-text-color);
+}
+
+.title {
+  //styleName: Medium 22;
+  display: flex;
+  gap: 10px;
+  font-family: Gordita;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0em;
+  text-align: left;
+  align-items: center;
+}
+
+.change-address-form {
+  margin-top: 30px;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  @include media-breakpoint-down(lg) {
+    flex-direction: column;
+    flex-basis: 100%;
+  }
+
+  & .form-group {
+    // flex-shrink: 0;
+    width: calc(50% - 15px);
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: relative;
+
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+    }
+  }
+
+  & label {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  & input {
+    color: var(--primary-text-color);
+    background-color: transparent;
+    outline: none;
+    height: 50px;
+    font-size: 1.8rem;
+    text-indent: 12px;
+    border-radius: 10px;
+    border: 1px solid #d2d1d6;
+  }
+
+  & input:not(:placeholder-shown) ~ .placeholder-fake {
+    display: none;
+  }
+
+  & .placeholder-fake {
+    position: absolute;
+    color: #d2d1d6;
+    bottom: 25px;
+    left: 15px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    transform: translateY(50%);
+    pointer-events: none;
+  }
+
+  & .buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+    & .cancel-btn {
+      background-color: #d2d1d6;
+    }
+  }
+}

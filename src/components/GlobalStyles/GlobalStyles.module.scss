@@ -1,14 +1,156 @@
-@import "normalize.css";
+@import 'normalize.css';
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import url('../../assets/fonts/Gordita-Font/stylesheet.scss');
 
-.root {
+:root {
+  --primary-text-color: #1a162e;
+  --secondary-text-color: #9e9da8;
+  --font-family: 'Gordita';
+  --white: #ffffff;
+  --black: #000000;
+  //header
+  --header-bg-color: #eeeeee;
+  --header-actions-group-bg-color: #ffffff;
+  --header-actions-separate-color: #ededf6;
+  --header-mega-menu-separate-color: #d2d1d6;
+  --header-icon-color: #1a162e;
+  --header-mega-menu-bg-color: white;
+  --header-shadow-color: #f6edee33;
+  --header-avatar-menu-bg-color: #d2caca;
+
+  //home page
+
+  --home-page-bg-color: #f6f6f6;
+
+  //categorise
+  --categorise-bg-thumbnail-color: #ffffff;
+  --categorise-bg-color-hover: #d2caca;
+  --categorise-bg-color: #eeeeee;
+  --categorise-shadow-color: #f6edee33;
+
+  // product-card
+  //#f6edee33
+  --product-card-shadow-color: #f6edee33;
+  --product-card-bg-color-hover: #d2caca;
+  --product-card-bg-color: white;
+  --categorise-bg-thumbnail-color: #ffffff;
+
+  //login
+  --login-column-left-bg-color: #fafafd;
+  --login-column-right-bg-color: #ffffff;
+  --login-input-boder-color: #d2d1d6;
+
+  // product
+  --main-info-bg-color: #f6f6f6;
+  --product-thumnail-container-bg-color: #ffffff;
+  --product-price-color: black;
+  --product-label-size-bg-color: #ededf6;
+
+  //profile
+  --profile-bg-color: #f6f6f6;
+  --profile-sidebar-bg-color: #ffffff;
+  --profile-menu-item-bg-color-hover: rgba(210, 203, 203, 0.4);
+  --profile-info-bg-color: #ffffff;
+  --profile-info-item-bg-color: #f6f6f6;
+
+  //payment
+  --payment-bg-color: #f6f6f6;
+  --payment-list-item-bg-color: #ffff;
+
+  // favorite
+  --favorite-wrapper-bg-color: #f6f6f6;
+  --favorite-list-item-bg-color: #ffff;
+}
+
+:global {
+  html.dark {
+    --primary-text-color: #ffff;
+
+    // header
+    --header-bg-color: #171c28;
+    --header-actions-group-bg-color: #292e39;
+    --header-icon-color: #ffff;
+    --header-mega-menu-separate-color: #292e39;
+    --header-mega-menu-bg-color: #292e39;
+    --header-avatar-menu-bg-color: rgba(210, 203, 203, 0.4);
+    // home page
+    --home-page-bg-color: #292e39;
+    // product card
+    --product-card-bg-color: #171c28;
+    --product-card-bg-color-hover: rgba(210, 203, 203, 0.6);
+
+    //categorise
+    --categorise-bg-thumbnail-color: #292e39;
+    --categorise-bg-color-hover: rgba(210, 203, 203, 0.4);
+    --product-card-bg-color: #171c28;
+    --categorise-bg-color: #171c28;
+
+    //login
+    --login-column-left-bg-color: #171c28;
+    --login-column-right-bg-color: #292e39;
+    --login-input-boder-color: #b9babe;
+
+    // product
+    --main-info-bg-color: #171c28;
+    --product-thumnail-container-bg-color: #292e39;
+    --product-price-color: white;
+    --product-label-size-bg-color: #292e39;
+
+    //profile
+    --profile-bg-color: #292e39;
+    --profile-sidebar-bg-color: #171c28;
+    --profile-menu-item-bg-color-hover: rgba(210, 203, 203, 0.4);
+    --profile-info-bg-color: #171c28;
+    --profile-info-item-bg-color: #292e39;
+    --profile-account-info-icon-bg-color: #171c28;
+
+    //payment
+    --payment-bg-color: #292e39;
+    --payment-list-item-bg-color: #171c28;
+
+    //favorite
+    --favorite-wrapper-bg-color: #292e39;
+    --favorite-list-item-bg-color: #171c28;
+  }
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Gordita';
+  font-size: 1.6rem;
+  .slick-dots {
+    display: block;
+    bottom: 10px !important;
+  }
+
+  .slick-active {
+    color: black;
+  }
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: background-color 0.5s ease;
 }
-html {
-    font-size: 62.5%;
-    font-size: 1.6rem;
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  outline: none;
+}
+
+ul {
+  text-decoration: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

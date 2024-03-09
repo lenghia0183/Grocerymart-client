@@ -1,13 +1,19 @@
-import classNames from "classnames/bind";
-import style from "./NotFound.module.scss";
+import classNames from 'classnames/bind';
+import style from './NotFound.module.scss';
+import { useState } from 'react';
+import ProductImageGallery from '../../components/ProductImageGallery';
+import AvatarMenu from '../../components/AvatarMenu';
 
 const cx = classNames.bind(style);
 function NotFound() {
-    return (
-        <div className={cx("wrapper")}>
-            <h1>NotFound Page</h1>
-        </div>
-    );
+  const [isOpen, setIsOpen] = useState(false);
+  return (
+    <div className={cx('container')}>
+      <div className={cx('wrapper')}>
+        <AvatarMenu/>
+      </div>
+    </div>
+  );
 }
 
 export default NotFound;

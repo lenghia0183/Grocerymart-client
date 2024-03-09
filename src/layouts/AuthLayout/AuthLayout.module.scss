@@ -1,0 +1,122 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  // height: 100vh;
+}
+
+.column-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  transition: transform 0.5s linear;
+
+  &.next-column {
+    transform: translateX(-100%);
+
+    & .next-btn {
+      transform: rotateX('angle') !important;
+    }
+  }
+}
+
+.left-column {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 50%;
+  height: 100%;
+  background-color: var(--login-column-left-bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
+  & .left-content {
+    width: 412px;
+  }
+
+  & .left-logo {
+    position: absolute;
+    top: 8%;
+    display: none;
+    @include media-breakpoint-down(lg) {
+      display: block;
+    }
+  }
+
+  &img {
+    width: 422px;
+    height: 261px;
+  }
+
+  & .left-desc {
+    margin-top: 49px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--primary-text-color);
+    text-align: center;
+  }
+}
+
+.right-column {
+  flex-grow: 1;
+  flex-shrink: 0;
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--login-column-right-bg-color);
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
+  & .right-content {
+    width: 460px;
+    position: relative;
+  }
+}
+
+.indicator-container {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  @include media-breakpoint-down(lg) {
+    opacity: 1;
+    visibility: visible;
+  }
+  & .dots {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ededf6;
+    border: solid 1px #ededf6;
+  }
+
+  & .dot-active {
+    background-color: #b9babe;
+    width: 15px;
+  }
+
+  & .next-btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  & .pre-icon {
+    transform: rotate(180deg);
+  }
+}
