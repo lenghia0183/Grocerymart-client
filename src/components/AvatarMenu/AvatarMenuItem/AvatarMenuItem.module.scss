@@ -3,7 +3,7 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-
+  padding: 10px 20px;
   &:hover {
     background-color: var(--product-card-bg-color-hover);
   }

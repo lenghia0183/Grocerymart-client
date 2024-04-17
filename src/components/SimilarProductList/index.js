@@ -2,7 +2,8 @@ import classNames from 'classnames/bind';
 import styles from './SimilarProductList.module.scss';
 import ProductCard from '../ProductCard';
 import images from '../../assets/images';
-// import { StartIcon } from '../../Icon';
+import Pagination from '../Pagination';
+import { useEffect, useState } from 'react';
 
 const cx = classNames.bind(styles);
 const listProduct = [
@@ -40,6 +41,13 @@ const listProduct = [
   },
 ];
 function SimilarProductList() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages] = useState(2);
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
+
   return (
     <div className={cx('wrapper')}>
       <div className={cx('row g-xl-5')}>
@@ -51,6 +59,7 @@ function SimilarProductList() {
           );
         })}
       </div>
+      <Pagination onPageChange={handlePageChange} currentPage={currentPage} totalPages={totalPages} />
     </div>
   );
 }

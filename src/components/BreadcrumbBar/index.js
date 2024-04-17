@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 function Breadcrumb() {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
-  console.log(pathnames);
+  // console.log(pathnames);
   return (
     <div className={cx('wrapper')}>
       <Link to="/" className={cx('link')}>
@@ -18,9 +18,12 @@ function Breadcrumb() {
         return (
           <div className={cx('link-container')}>
             <ArrowRight className={cx('arrow-right')} />
-            <Link className={cx('link')} to={`/${pathnames.slice(0, index + 1).join('/')}`}>
+            <Link
+              className={cx({ link: index !== pathnames.length - 1 }, { 'none-click': index === pathnames.length - 1 })}
+              to={`/${pathnames.slice(0, index + 1).join('/')}`}
+            >
               {path.split('').map((littel, index) => {
-                if (index == 0) {
+                if (index === 0) {
                   return littel.toUpperCase();
                 }
                 return littel;

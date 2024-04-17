@@ -1,4 +1,5 @@
 import { useState, useMemo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
 import classNames from 'classnames/bind';
 
 import styles from './Footer.module.scss';
@@ -9,6 +10,7 @@ import { FacebookIcon, InstagramIcon, LinkedinIcon, SendIcon } from '../../compo
 const cx = classNames.bind(styles);
 
 function Footer() {
+  const { t } = useTranslation();
   const [emailValue, setEmailValue] = useState('');
   const [isDisabled, setIsDisabled] = useState(true);
   const emailRegex = useMemo(() => /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/, []);
@@ -29,12 +31,9 @@ function Footer() {
             <div className={cx('footer__col')}>
               <Logo />
 
-              <p className={cx('footer__desc')}>
-                Chúng tôi có niềm tin mạnh mẽ rằng trải nghiệm mua sắm trực tuyến phải đơn giản, dễ dàng và mang đến cảm
-                xúc vui thích. Niềm tin này truyền cảm hứng và thúc đẩy chúng tôi mỗi ngày.
-              </p>
+              <p className={cx('footer__desc')}>{t('footer.desc01')}</p>
 
-              <p className={cx('footer__help-text')}>Nhận tin tức, cập nhật mới nhất và nhiều thứ khác mỗi tuần.</p>
+              <p className={cx('footer__help-text')}>{t('footer.desc01')}</p>
               <form action="" className={cx('footer__form')}>
                 <input
                   value={emailValue}
@@ -52,89 +51,89 @@ function Footer() {
             </div>
 
             <div className={cx('footer__col')}>
-              <h3 className={cx('footer__heading')}>Cửa hàng</h3>
+              <h3 className={cx('footer__heading')}>{t('footer.store.title01')}</h3>
               <ul className={cx('footer__list')}>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Trang chủ
+                    {t('footer.store.title02')}
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Cửa hàng tạp hóa
+                    {t('footer.store.title03')}
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Nhà & Nội thất
+                    {t('footer.store.title04')}
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Thời trang
+                    {t('footer.store.title05')}
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className={cx('footer__col')}>
-              <h3 className={cx('footer__heading')}>Trợ giúp</h3>
+              <h3 className={cx('footer__heading')}>{t('footer.help.title01')}</h3>
               <ul className={cx('footer__list')}>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Vị trí cửa hàng
+                    {t('footer.help.title02')}
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Tình trạng đặt hàng
+                    {t('footer.help.title03')}
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className={cx('footer__col')}>
-              <h3 className={cx('footer__heading')}>Công ty</h3>
+              <h3 className={cx('footer__heading')}>{t('footer.company.title01')}</h3>
               <ul className={cx('footer__list')}>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Dịch vụ khách hàng
+                    {t('footer.company.title02')}
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Điều khoản sử dụng
+                    {t('footer.company.title03')}
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
                   <a href="#!" className={cx('footer__link')}>
-                    Về chúng tôi
+                    {t('footer.company.title04')}
                   </a>
                 </li>
               </ul>
             </div>
 
             <div className={cx('footer__col')}>
-              <h3 className={cx('footer__heading')}>Liên hệ</h3>
+              <h3 className={cx('footer__heading')}>{t('footer.contact.title01')}</h3>
               <ul className={cx('footer__list')}>
                 <li className={cx('footer__item')}>
-                  <p className={cx('footer__label')}>Email</p>
+                  <p className={cx('footer__label')}>{t('footer.contact.email')}</p>
                   <a href="mailto:yeusangtao96@gmail.com" className={cx('footer__link')}>
                     Lenghia0183@gmail.com
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
-                  <p className={cx('footer__label')}>Điện thoại</p>
+                  <p className={cx('footer__label')}>{t('footer.contact.phone')}</p>
                   <a href="tel:+84982155291" className={cx('footer__link')}>
                     +84 0369 067 607
                   </a>
                 </li>
                 <li className={cx('footer__item')}>
-                  <p className={cx('footer__label')}>Địa chỉ</p>
+                  <p className={cx('footer__label')}>{t('footer.contact.address')}</p>
                   <p className={cx('footer__text')}>Liên Phương, Thường Tín, Hà Nội</p>
                 </li>
                 <li className={cx('footer__item')}>
-                  <p className={cx('footer__label')}>Mở cửa</p>
+                  <p className={cx('footer__label')}>{t('footer.contact.open-time')}</p>
                   <p className={cx('footer__text')}>Thứ Hai - Thứ Bảy 08:00 sáng - 06:00 chiều</p>
                 </li>
               </ul>

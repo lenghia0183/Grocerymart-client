@@ -5,7 +5,6 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 
 function ProductImageGallery() {
-
   //chon anh dang active
   const [imageselected, setImageSelected] = useState(null);
 
@@ -33,6 +32,7 @@ function ProductImageGallery() {
               <img
                 src={item.image}
                 key={index}
+                alt=""
                 className={cx(
                   { active: index === imageselected },
                   { 'first-item': index == 0 && imageselected == null },
@@ -46,6 +46,7 @@ function ProductImageGallery() {
           {data.map((item, index) => {
             return (
               <img
+                alt=""
                 className={cx({ 'active-small': index === imageselected })}
                 src={item.image}
                 key={index}

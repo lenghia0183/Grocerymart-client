@@ -1,12 +1,29 @@
-.wrapper {
-    display: flex;
-    align-items: center;
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
 
-    .brand {
-        color: var(--primary-text-color);
-        font-size: 2.2rem;
-        margin-left: 14px;
-        font-weight: 700;
-        margin-bottom: 0;
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .brand {
+    color: var(--primary-text-color);
+    font-size: 2.2rem;
+    margin-left: 14px;
+    font-weight: 700;
+    margin-bottom: 0;
+
+    @include media-breakpoint-down(md) {
+      font-size: 1.8rem;
+      margin-left: 10px;
     }
+  }
+
+  img {
+    @include media-breakpoint-down(md) {
+      width: 24px;
+      height: 24px;
+    }
+  }
 }

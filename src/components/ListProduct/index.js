@@ -7,6 +7,9 @@ import images from '../../assets/images';
 import ProductCard from '../ProductCard';
 import { FilterIcon } from '../Icon';
 import Filter from '../Filter';
+import Pagination from '../Pagination';
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 const cx = classNames.bind(styles);
 
 const listProduct = [
@@ -69,13 +72,21 @@ const listProduct = [
 ];
 //call api o day
 function ListProduct() {
+  const { t } = useTranslation();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages] = useState(5);
+  // console.log(currentPage);
+  const handlePageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className=".container">
       <div className={cx('title-container')}>
-        <span className={cx('title-product')}>Total LavAzza 1320</span>
+        <span className={cx('title-product')}>{t('home.title02')}</span>
         <Filter>
           <div className={cx('filter-container')}>
-            <span> Filter</span>
+            <span>{t('home.filter')}</span>
             <FilterIcon />
           </div>
         </Filter>
@@ -100,6 +111,7 @@ function ListProduct() {
           );
         })}
       </div>
+      <Pagination onPageChange={handlePageChange} currentPage={currentPage} totalPages={totalPages} />
     </div>
   );
 }

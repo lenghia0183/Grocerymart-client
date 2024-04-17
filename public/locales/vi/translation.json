@@ -1,0 +1,72 @@
+{
+  "header": {
+    "nav01": "Trang chủ",
+    "nav02": "Coffee",
+    "nav03": "Trà",
+    "nav04": "Cacao"
+  },
+
+  "footer": {
+    "desc01": "Chúng tôi có niềm tin mạnh mẽ rằng trải nghiệm mua sắm trực tuyến phải đơn giản, dễ dàng và mang đến cảm xúc vui thích. Niềm tin này truyền cảm hứng và thúc đẩy chúng tôi mỗi ngày.",
+    "desc02": "Nhận tin tức, cập nhật mới nhất và nhiều thứ khác mỗi tuần.",
+    "store": {
+      "title01": "Cửa Hàng",
+      "title02": "Trang chủ",
+      "title03": "Coffee",
+      "title04": "Trà",
+      "title05": "Ca Cao"
+    },
+    "help": {
+      "title01": "Trợ Giúp",
+      "title02": "Vị trí cửa hàng",
+      "title03": "Tình trạng đặt hàng"
+    },
+    "company": {
+      "title01": "Công Ty",
+      "title02": "Dịch vụ khách hàng",
+      "title03": "Về chúng tôi"
+    },
+    "contact": {
+      "title01": "Liên lạc",
+      "email": "Email",
+      "phone": "Số điện thoại",
+      "address": "Địa chỉ",
+      "open-time": "Giờ mở cửa"
+    }
+  },
+
+  "menu-avatar": {
+    "nav01": "Hồ sơ",
+    "nav02": "Yêu thích",
+    "nav03": "Sáng tối",
+    "language": {
+      "title": "Ngôn ngữ",
+      "en": "Tiếng Anh",
+      "vi": "Tiếng Việt"
+    },
+    "nav04": "Đăng xuất"
+  },
+
+  "home": {
+    "title01": "Danh mục",
+    "title02": "Mới nhất",
+    "filter": "Bộ lọc"
+  },
+  "sidebar-filter": {
+    "title01": "Loại sản phẩm",
+    "title02": "Bộ lọc sản phẩm",
+    "sub-title01": "Theo loại sản phẩm",
+    "sub-title02": "Theo thương hiệu",
+    "sub-title03": "Khoảng giá",
+    "sub-title04": "Kích thước và trọng lượng",
+    "sub-title05": "Đánh giá",
+    "or-more": "Trở lên",
+    "btn01": "Áp dụng",
+    "btn02": "Tìm kiếm",
+    "box": "Hộp",
+    "bag": "Túi",
+    "small": "Nhỏ",
+    "medium": "Vừa",
+    "big": "To"
+  }
+}

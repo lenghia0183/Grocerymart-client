@@ -3,6 +3,50 @@
 //     ),
 // };
 
+export const EmptyStarIcon = ({ width = '2.1rem', height = '2rem', className }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+    width={width}
+    height={height}
+    viewBox="0 0 21 20"
+    fill="none"
+  >
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11.6043 2.17701L13.4317 5.82776C13.6108 6.18616 13.9565 6.43467 14.3573 6.49218L18.4453 7.08062C19.4554 7.22644 19.8573 8.45055 19.1263 9.15194L16.1702 11.9924C15.8797 12.2718 15.7474 12.6733 15.8162 13.0676L16.5138 17.0778C16.6856 18.0698 15.6298 18.8267 14.727 18.3574L11.0732 16.4627C10.715 16.2768 10.286 16.2768 9.92679 16.4627L6.273 18.3574C5.37023 18.8267 4.31439 18.0698 4.48724 17.0778L5.18385 13.0676C5.25257 12.6733 5.12033 12.2718 4.82982 11.9924L1.87368 9.15194C1.14272 8.45055 1.54464 7.22644 2.55466 7.08062L6.64265 6.49218C7.04354 6.43467 7.39028 6.18616 7.56937 5.82776L9.39574 2.17701C9.84765 1.27433 11.1523 1.27433 11.6043 2.17701Z"
+      stroke="#FFB700"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const MenuIcon = ({ width = '1.2rem', height = '1.6rem', className }) => (
+  <svg
+    className={className}
+    width={width}
+    height={height}
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 14 17"
+    fill="none"
+  >
+    <path d="M13 1.5H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M13 9H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    <path d="M6 16H1" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  </svg>
+);
+
+export const LogoutIcon = () => {
+  return (
+    <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+      <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+    </svg>
+  );
+};
+
 export const SendIcon = ({ width = '1.6rem', height = '1.6rem', className }) => (
   <svg
     version="1.1"
@@ -1181,19 +1225,12 @@ export const SearchIcon = ({ width = 21, height = 21, className }) => {
   );
 };
 
-export const ArrowDown = ({ width = 10, height = 16, className }) => {
+export const ArrowDown = ({ className }) => {
   return (
-    <svg
-      className={className}
-      xmlns="http://www.w3.org/2000/svg"
-      width="10"
-      height="6"
-      viewBox="0 0 10 6"
-      fill="currentColor"
-    >
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 6" fill="none">
       <path
         d="M8.5 1.25L5 4.75L1.5 1.25"
-        stroke="#1A162E"
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"

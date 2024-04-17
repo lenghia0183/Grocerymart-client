@@ -21,6 +21,7 @@ const images = {
   card2: require('./card2.png'),
   addNewCard: require('./addNewCard.png'),
   gift: require('./gift.png'),
+  avatarTest: require('./avatar-test.jpg'),
 };
 
 export default images;

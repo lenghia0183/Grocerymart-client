@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './ProductDetail.module.scss';
 
@@ -19,15 +19,19 @@ function ProductDetail() {
   const [weightOptions, setWeightOptions] = useState(['100g', '200g', '500g']);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleUnitChange = (e) => {
     const unit = e.target.value;
     setSelectUnit(unit);
 
     if (unit === 'g') {
-      console.log('g');
+      // console.log('g');
       setWeightOptions(['100g', '200g', '500g']);
     } else {
-      console.log('kg');
+      // console.log('kg');
       setWeightOptions(['1kg', '2kg', '5kg']);
     }
   };

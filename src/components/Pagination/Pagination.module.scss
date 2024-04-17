@@ -1,0 +1,51 @@
+.active {
+  color: red;
+}
+
+.pagination {
+  width: fit-content;
+  // background: red;
+  display: flex;
+  margin: 40px auto;
+  gap: 20px;
+
+  & .page-item {
+    background-color: transparent;
+    border-radius: 50%;
+  }
+
+  & .page-link {
+    // display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: var(--primary-text-color);
+    font-weight: 500;
+    border: 1px solid var(--primary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      color: rgb(109, 199, 211);
+    }
+  }
+
+  & .active {
+    background-color: rgb(109, 199, 211, 1);
+
+    &:hover > .active-link {
+      color: var(--primary-text-color);
+    }
+  }
+
+  & .prev-arrow {
+    transform: rotate(180deg);
+  }
+
+  & .arrow {
+    display: block;
+  }
+}

@@ -1,10 +1,10 @@
 .tippy-avatar-menu {
-  min-width: 200px;
+  min-width: 250px;
   box-shadow: 0px -10px 90px 30px #c8c8c866;
   background-color: var(--header-mega-menu-bg-color);
-  border-radius: 10px;
-  // opacity: 0.5;
-  padding: 10px 0;
+  border-radius: 15px;
+  // opacity: 0.9;
+  padding: 20px 0;
 }
 
 .menu-header {
@@ -25,5 +25,38 @@
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+}
+
+.info-container {
+  display: flex;
+  color: var(--primary-text-color);
+  margin: 20px 0;
+
+  & .avatar {
+    margin-left: 20px;
+
+    & img {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  }
+
+  & .user-info {
+    font-size: 1.6rem;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    & .user-email {
+      display: block;
+    }
+
+    & .user-name {
+      display: block;
+      font-weight: 700;
+    }
   }
 }

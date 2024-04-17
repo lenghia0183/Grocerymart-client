@@ -2,12 +2,11 @@
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
-@import url('../../assets/fonts/Gordita-Font/stylesheet.scss');
+@import url('../../assets/fonts/Lato-Font/stylesheet.scss');
 
 :root {
   --primary-text-color: #1a162e;
   --secondary-text-color: #9e9da8;
-  --font-family: 'Gordita';
   --white: #ffffff;
   --black: #000000;
   //header
@@ -120,7 +119,7 @@ html {
 }
 
 body {
-  font-family: 'Gordita';
+  font-family: 'Lato', sans-serif;
   font-size: 1.6rem;
   .slick-dots {
     display: block;
@@ -136,7 +135,6 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: background-color 0.5s ease;
 }
 
 a {

@@ -24,7 +24,7 @@ function PaymentProduct({ data, className }) {
 
   return (
     <div className={cx('wrapper', { className })}>
-      <img src={data.image} className={cx('thumbnail')} />
+      <img src={data.image} className={cx('thumbnail')} alt="" />
       <div className={cx('main-content')}>
         <div className={cx('column-left')}>
           <span className={cx('name-product')}>{data.name}</span>

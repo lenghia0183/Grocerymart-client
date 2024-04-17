@@ -4,9 +4,11 @@ import images from '../../assets/images';
 import Slider from '../../components/Slider';
 import CategoriesProduct from '../../components/CategoriesProduct';
 import ListProduct from '../../components/ListProduct';
+import { useTranslation } from 'react-i18next';
 const cx = classNames.bind(styles);
 
 function Home() {
+  const { t } = useTranslation();
   const listImage = [
     {
       alt: 'grocery mart',
@@ -115,7 +117,7 @@ function Home() {
         <Slider className={cx('slide-show')} listImage={listImage}></Slider>
 
         {/* categorise */}
-        <span className={cx('browse-categories')}>Browse Categories</span>
+        <span className={cx('browse-categories')}>{t('home.title01')}</span>
         <div className={cx('categorise-wrapper', 'row', 'row-cols-md-3', 'row-cols-1', 'g-3')}>
           {listCategorise.map((item, index) => {
             return (

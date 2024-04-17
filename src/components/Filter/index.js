@@ -15,7 +15,7 @@ function Filter({ children }) {
   const handlePriceSliderOnChange = (values) => {
     setPriceRange(values);
   };
-  console.log(priceRange);
+  // console.log(priceRange);
 
   const handlePriceInputOnChange = (e, type) => {
     if (type == 'min') {

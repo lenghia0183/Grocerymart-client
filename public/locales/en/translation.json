@@ -1,0 +1,74 @@
+{
+  "header": {
+    "nav01": "Home",
+    "nav02": "Coffee",
+    "nav03": "Tea",
+    "nav04": "Cacao"
+  },
+
+  "footer": {
+    "desc01": "We strongly believe that the online shopping experience should be simple, easy and enjoyable. This belief inspires and motivates us every day.",
+    "desc02": "Get the latest news, updates and more every week.",
+    "store": {
+      "title01": "Store",
+      "title02": "Home",
+      "title03": "Coffee",
+      "title04": "Tea",
+      "title05": "Cocoa"
+    },
+    "help": {
+      "title01": "Help",
+      "title02": "Store location",
+      "title03": "Order status"
+    },
+    "company": {
+      "title01": "Company",
+      "title02": "Customer service",
+      "title03": "Terms of use",
+      "title04": "About us"
+    },
+    "contact": {
+      "title01": "Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "address": "Address",
+      "open-time": "Business hours"
+    }
+  },
+
+  "menu-avatar": {
+    "nav01": "Profile",
+    "nav02": "Favorites",
+    "nav03": "DarkMode",
+    "language": {
+      "title": "Language",
+      "en": "English",
+      "vi": "Vietnamese"
+    },
+    "nav04": "Logout"
+  },
+
+  "home": {
+    "title01": "Caterorise",
+    "title02": "Newest",
+    "filter": "filter"
+  },
+
+  "sidebar-filter": {
+    "title01": "Categorise",
+    "title02": "Product filter",
+    "sub-title01": "By product type",
+    "sub-title02": "By brand",
+    "sub-title03": "Price range",
+    "sub-title04": "Size and weight",
+    "sub-title05": "Rating",
+    "or-more": "Or more",
+    "btn01": "Apply",
+    "btn02": "Search",
+    "box": "Box",
+    "bag": "Bag",
+    "small": "Small",
+    "medium": "Medium",
+    "big": "Big"
+  }
+}

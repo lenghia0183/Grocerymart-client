@@ -9,6 +9,7 @@ import SecondaryLayout from '../layouts/SecondaryLayout/SecondaryLayout';
 import Profile from '../pages/Profile';
 import Payment from '../pages/Payment';
 import Favorite from '../pages/Favorite';
+import Coffee from '../pages/Cofffee';
 const publicRoutes = [
   {
     path: config.routes.home,
@@ -47,6 +48,21 @@ const publicRoutes = [
   {
     path: config.routes.favorite,
     element: Favorite,
+    layout: SecondaryLayout,
+  },
+  {
+    path: config.routes.coffee,
+    element: Coffee,
+    layout: SecondaryLayout,
+  },
+  {
+    path: config.routes.tea,
+    element: Coffee,
+    layout: SecondaryLayout,
+  },
+  {
+    path: config.routes.cacao,
+    element: Coffee,
     layout: SecondaryLayout,
   },
 ];

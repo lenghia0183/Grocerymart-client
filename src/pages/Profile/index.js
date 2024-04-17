@@ -24,11 +24,11 @@ function Profile() {
             <ProfileSideBar selectedItem={selectedItem} onMenuItemClick={handleMenuItemClick} />
           </div>
           <div className={cx('col-lg-9 col-md-8 col-sm-12')}>
-            <div  className={cx('item-container',{"active": selectedItem})}>
-              {selectedItem == 'Personal info' && <PersonalInfo />}
-              {selectedItem == 'Addresses' && <ProfileAddress />}
-              {selectedItem == 'Password' && <ProfilePassword />}
-              {selectedItem == 'Terms of Use' && <ProfileTermOfUse />}
+            <div className={cx('item-container', { active: selectedItem })}>
+              {selectedItem === 'Personal info' && <PersonalInfo />}
+              {selectedItem === 'Addresses' && <ProfileAddress />}
+              {selectedItem === 'Password' && <ProfilePassword />}
+              {selectedItem === 'Terms of Use' && <ProfileTermOfUse />}
             </div>
           </div>
         </div>

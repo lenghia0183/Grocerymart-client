@@ -1,132 +1,178 @@
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
-@import "bootstrap/scss/mixins";
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
 
 .wrapper {
-    & .logo {
-        top: 5%;
-        left: 50px;
-        // position: absolute;
-        margin-left: 50%;
-        transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  & .logo {
+    @include media-breakpoint-down(md) {
+      margin-top: 30px;
+      font-size: 2rem;
+    }
+  }
+
+  & .title {
+    margin-top: 40px;
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+    color: var(--primary-text-color);
+    @include media-breakpoint-down(md) {
+      font-size: 2.5rem;
+      margin-top: 20px;
+    }
+  }
+
+  & .right-desc {
+    width: 460px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-top: 10px;
+    color: #9e9da8;
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+    }
+  }
+
+  & .form {
+    width: 100%;
+    margin-top: 60px;
+    @include media-breakpoint-down(md) {
+      margin-top: 0px;
+    }
+    & .form-group {
+      width: 100%;
+      position: relative;
+      margin-bottom: 30px;
+      @include media-breakpoint-down(md) {
+        margin-top: 20px;
+      }
+
+      &:last-child {
+        margin-bottom: 21px;
+      }
     }
 
-    & .title {
-        margin-top: 50px;
-        font-size: 3rem;
-        font-weight: 500;
-        text-align: center;
-        color: var(--primary-text-color);
+    & input {
+      width: 100%;
+      height: 50px;
+      font-size: 1.8rem;
+      padding: 12px, 170px, 12px, 12px;
+      border-radius: 10px;
+      border: 1px solid var(--login-input-boder-color);
+      padding: 15px;
+      background-color: transparent;
+      color: var(--primary-text-color);
+
+      @include media-breakpoint-down(md) {
+        height: 45px;
+        font-size: 1.6rem;
+      }
+
+      &::placeholder {
+        color: transparent;
+      }
+
+      &:not(:placeholder-shown) + label {
+        color: transparent;
+      }
     }
 
-    & .right-desc {
-        width: 460px;
-        text-align: center;
+    & label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 13px;
+      font-size: 1.8rem;
+      font-weight: 500;
+      line-height: 26px;
+      color: #d2d1d6;
+      cursor: pointer;
+      pointer-events: none;
+      @include media-breakpoint-down(md) {
+        font-size: 1.6rem;
+      }
+    }
+
+    .icon {
+      position: absolute;
+      width: 20px;
+      width: 20px;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-50%);
+    }
+  }
+
+  & .option-group {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    & .option-left {
+      display: flex;
+      & label {
+        margin-left: 10px;
         font-size: 1.5rem;
         font-weight: 500;
-        margin-top: 10px;
         color: #9e9da8;
+      }
     }
 
-    & .form {
-        margin-top: 60px;
+    & .option-right {
+      color: var(--primary-text-color);
+    }
+  }
 
-        & .form-group {
-            position: relative;
-            margin-bottom: 30px;
-
-            &:last-child {
-                margin-bottom: 21px;
-            }
-        }
-
-        & input {
-            width: 100%;
-            height: 50px;
-            font-size: 1.8rem;
-            padding: 12px, 170px, 12px, 12px;
-            border-radius: 10px;
-            border: 1px solid var(--login-input-boder-color);
-            padding: 15px;
-            background-color: transparent;
-            color: var(--primary-text-color);
-            &::placeholder {
-                color: transparent;
-            }
-
-            &:not(:placeholder-shown) + label {
-                color: transparent;
-            }
-        }
-
-        & label {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            left: 13px;
-            font-size: 1.8rem;
-            font-weight: 500;
-            line-height: 26px;
-            color: #d2d1d6;
-            cursor: pointer;
-            pointer-events: none;
-        }
-
-        .icon {
-            position: absolute;
-            top: 50%;
-            right: 18px;
-            transform: translateY(-50%);
-        }
+  & .buttons {
+    margin-top: 50px;
+    width: 100%;
+    @include media-breakpoint-down(md) {
+      margin-top: 35px;
     }
 
-    & .option-group {
-        display: flex;
-        justify-content: space-between;
-        & .option-left {
-            display: flex;
-            & label {
-                margin-left: 10px;
-                font-size: 1.5rem;
-                font-weight: 500;
-                color: #9e9da8;
-            }
-        }
-
-        & .option-right {
-            color: var(--primary-text-color);
-        }
+    & .sign-up-btn {
+      background-color: #ffb700;
+      margin-bottom: 30px;
+      height: 45px;
+      border-radius: 10px;
+      @include media-breakpoint-down(md) {
+        height: 45px;
+        margin-bottom: 25px;
+      }
     }
 
-    & .buttons {
-        margin-top: 50px;
+    & .gmail-btn {
+      height: 45px;
+      color: var(--primary-text-color);
+      border-radius: 10px;
+    }
+  }
 
-        & .sign-up-btn {
-            background-color: #ffb700;
-            margin-bottom: 30px;
-        }
+  & .register-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 85px;
 
-        & .gmail-btn {
-            color: var(--primary-text-color);
-        }
+    @include media-breakpoint-down(md) {
+      margin-top: 30px;
     }
 
-    & .register-section {
-        display: flex;
-        justify-content: center;
-        margin-top: 108px;
-
-        & .no-account {
-            font-size: 1.8rem;
-            font-weight: 400;
-            color: #9e9da8;
-        }
-
-        & .sign-in-link {
-            font-size: 1.8rem;
-            font-weight: 500;
-            color: #0071dc;
-            margin-left: 10px;
-        }
+    & .no-account {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #9e9da8;
     }
+
+    & .sign-in-link {
+      font-size: 1.8rem;
+      font-weight: 500;
+      color: #0071dc;
+      margin-left: 10px;
+    }
+  }
 }

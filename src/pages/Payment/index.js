@@ -48,12 +48,14 @@ const list = [
 ];
 
 function Payment() {
+  //eslint-disable-next-line
   const [paymentProducts, setPaymentProducts] = useState([]);
 
+  //eslint-disable-next-line
   const handlePaymentProductChange = (productId, newQuantity) => {
     setPaymentProducts((pre) => {
       return pre.map((item) => {
-        return item.id == productId ? { ...item, newQuantity } : item;
+        return item.id === productId ? { ...item, newQuantity } : item;
       });
     });
   };
