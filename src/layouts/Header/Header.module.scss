@@ -52,6 +52,7 @@
   color: var(--primary-text-color);
   @include media-breakpoint-down(lg) {
     display: block;
+    margin-right: 26px;
   }
 }
 

@@ -5,7 +5,7 @@ import { ArrowRight } from '../Icon';
 
 const cx = className.bind(styles);
 
-function Pagination({ onPageChange, totalPages = 4, currentPage = 1 }) {
+function Pagination({ onPageChange, totalPages = 10, currentPage = 1 }) {
   const handlePageChange = (e) => {
     onPageChange(e.selected + 1);
   };

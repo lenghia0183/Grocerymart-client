@@ -1,3 +1,7 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
 .active {
   color: red;
 }
@@ -8,6 +12,10 @@
   display: flex;
   margin: 40px auto;
   gap: 20px;
+  flex-wrap: wrap;
+  @include media-breakpoint-down(lg) {
+    gap: 15px;
+  }
 
   & .page-item {
     background-color: transparent;
@@ -27,6 +35,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @include media-breakpoint-down(lg) {
+      width: 35px;
+      height: 35px;
+    }
 
     &:hover {
       color: rgb(109, 199, 211);
