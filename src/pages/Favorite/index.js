@@ -11,7 +11,7 @@ function Favorite() {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('container')}>
-        <BreadcrumbBar></BreadcrumbBar>
+        <BreadcrumbBar />
 
         <div className={cx('main-content')}>
           <div className={cx('title')}>Favorite Products</div>
@@ -24,7 +24,7 @@ function Favorite() {
               Continue Shopping
             </Button>
 
-            <Button className={cx('checkout-all')} rounded>
+            <Button className={cx('checkout-btn')} rounded>
               Checkout All
             </Button>
           </div>

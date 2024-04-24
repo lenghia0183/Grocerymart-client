@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import classNames from 'classnames/bind';
 import styles from './AvatarMenu.module.scss';
 import AvatarMenuItem from './AvatarMenuItem';
-import { AccountIcon, BackArrow, DarkMode, DarkModeIcon, HeartIcon, LanguageIcon, LogoutIcon } from '../Icon';
+import { AccountIcon, BackArrow, CardIcon, DarkMode, DarkModeIcon, HeartIcon, LanguageIcon, LogoutIcon } from '../Icon';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useState } from 'react';
 import Button from '../Button';
@@ -26,6 +26,11 @@ function AvatarMenu({ children, items = [] }) {
       title: t('menu-avatar.nav01'),
       icon: <AccountIcon />,
       link: '/profile',
+    },
+    {
+      title: 'Giỏ hàng',
+      icon: <CardIcon />,
+      link: '/payment',
     },
     {
       title: t('menu-avatar.nav02'),

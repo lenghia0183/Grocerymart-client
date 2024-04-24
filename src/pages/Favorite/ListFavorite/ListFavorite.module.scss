@@ -7,15 +7,15 @@
     width: 20px;
     height: 20px;
     border: 1px solid var(--primary-text-color);
-    border-radius: 10%;
+    border-radius: 5px;
 
     &.checked {
-      background-color: rgb(42, 150, 42);
+      background-color: #67b044;
       position: relative;
 
       &::after {
         content: '';
-        width: 10px;
+        width: 8px;
         height: 15px;
         position: absolute;
         border: 2px solid var(--primary-text-color);

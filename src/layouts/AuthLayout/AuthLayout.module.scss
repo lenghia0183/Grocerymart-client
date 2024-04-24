@@ -6,7 +6,6 @@
   display: flex;
   width: 100%;
   // overflow: scroll;
-  // height: 100vh;
 }
 
 .column-container {
@@ -28,12 +27,12 @@
   flex-grow: 1;
   flex-shrink: 0;
   width: 50%;
-  // height: 100vh;
   background-color: var(--login-column-left-bg-color);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   .logo {
     font-size: 2rem;
@@ -44,7 +43,10 @@
   }
   & .left-content {
     width: 412px;
-    margin-bottom: 5%;
+    // margin-bottom: 5%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     @include media-breakpoint-down(lg) {
       width: 100% !important;
       padding: 0 10px;
@@ -83,14 +85,10 @@
   flex-shrink: 0;
   width: 50%;
   margin: 0 auto;
-  // padding: 50% 0;
-
-  min-height: max-content;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--login-column-right-bg-color);
-  position: relative;
 
   @include media-breakpoint-down(md) {
     width: 100%;
@@ -101,7 +99,10 @@
   width: 460px;
   padding-top: 5%;
   padding-bottom: 5%;
-  height: fit-content;
+
+  // position: absolute;
+  // top: 50%;
+  // transform: translateY(-50%);
 
   @include media-breakpoint-down(lg) {
     width: 100% !important;

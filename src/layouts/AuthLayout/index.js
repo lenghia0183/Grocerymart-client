@@ -4,6 +4,7 @@ import images from '../../assets/images';
 import Logo from '../../components/Logo';
 import { useState } from 'react';
 import { NextIcon } from '../../components/Icon';
+import { Link } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 function AuthLayout({ children }) {
@@ -13,7 +14,9 @@ function AuthLayout({ children }) {
       <div className={cx('column-container', { 'next-column': isNext })}>
         <div className={cx('left-column')}>
           <div className={cx('left-logo')}>
-            <Logo className={cx('logo')} />
+            <Link to={'/'}>
+              <Logo className={cx('logo')} />
+            </Link>
           </div>
 
           <div className={cx('left-content')}>

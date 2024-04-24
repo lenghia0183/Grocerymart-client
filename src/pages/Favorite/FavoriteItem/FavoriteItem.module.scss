@@ -4,9 +4,15 @@
 
 .wrapper {
   display: flex;
-  // justify-content: space-between;
   padding: 30px 0;
+  // flex-wrap: wrap;
   position: relative;
+  gap: 5px;
+  @include media-breakpoint-down(md) {
+    // flex-wrap: wrap;
+    flex-direction: column;
+  }
+
   &::after {
     content: '';
     width: 100%;
@@ -21,15 +27,17 @@
     width: 20px;
     height: 20px;
     border: 1px solid var(--primary-text-color);
-    border-radius: 10%;
+    border-radius: 5px;
+    overflow: hidden;
+    flex-shrink: 0;
 
     &.checked {
-      background-color: rgb(42, 150, 42);
+      background-color: #67b044;
       position: relative;
 
       &::after {
         content: '';
-        width: 10px;
+        width: 8px;
         height: 15px;
         position: absolute;
         border: 2px solid var(--primary-text-color);
@@ -46,7 +54,12 @@
     width: 175px;
     height: 172px;
     object-fit: cover;
-    border-radius: 15px;
+    border-radius: 10px;
+
+    @include media-breakpoint-down(md) {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   & .name-product {
@@ -61,6 +74,11 @@
     @include media-breakpoint-down(xxl) {
       width: fit-content;
     }
+
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      text-align: left;
+    }
   }
 
   & input[type='number']::-webkit-inner-spin-button {
@@ -73,31 +91,49 @@
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 30px;
+
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
+}
+
+.column-left {
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .price-state-container {
   margin-top: 16px;
 
+  @include media-breakpoint-down(md) {
+    margin-right: auto;
+  }
+
   & span {
     font-size: 1.8rem;
     font-weight: 500;
     display: inline-block;
-
-    padding: 0 10px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   & .price {
     color: #9e9da8;
     position: relative;
+    @include media-breakpoint-down(md) {
+      padding-left: 0;
+    }
 
     &::after {
       content: '';
-      width: 3px;
+      width: 2px;
       height: 80%;
       position: absolute;
       right: 0px;
       top: 50%;
       transform: translateY(-50%);
-
       background-color: #9e9da8;
     }
   }
@@ -107,13 +143,12 @@
   }
 }
 
-.brand-quatity-container {
+.brand-quantity-container {
   display: flex;
   gap: 20px;
   margin-top: 16px;
 
-  @include media-breakpoint-down(lg) {
-    flex-direction: column;
+  @include media-breakpoint-down(md) {
   }
 
   & .brand {
@@ -133,14 +168,15 @@
   & .quantity-container {
     width: 115px;
     height: 44px;
-
     border: 1px solid #d2d1d6;
     border-radius: 10px;
     position: relative;
+    flex-shrink: 0;
 
     & .quantity-inner {
       display: flex;
       gap: 12px;
+      align-items: center;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -153,14 +189,14 @@
       color: var(--primary-text-color);
     }
 
+    & .quantity-icon {
+      color: var(--primary-text-color);
+    }
+
     & button {
       outline: none;
       background-color: transparent;
-      border: 2px solid var(--primary-text-color);
-      width: 20px;
-      height: 20px;
-      display: flex;
-      border-radius: 3px;
+      border: none;
       align-items: center;
       justify-content: center;
       color: var(--primary-text-color);
@@ -180,6 +216,10 @@
     align-items: flex-start;
   }
 
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
+
   & .total {
     display: flex;
     margin-left: auto;
@@ -189,21 +229,45 @@
     @include media-breakpoint-down(xxl) {
       margin-left: 0;
     }
+    @include media-breakpoint-down(md) {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   & .action-container {
     display: flex;
     gap: 20px;
+    @include media-breakpoint-down(md) {
+      margin-top: 20px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
 
     & .delete-btn {
+      display: flex;
+      align-items: center;
       font-size: 16px;
       font-weight: 500;
       color: #9e9da8;
       padding-left: 0;
       padding-right: 0;
+
       @include media-breakpoint-down(xxl) {
         justify-content: flex-start;
       }
+
+      @include media-breakpoint-down(md) {
+        border: 1px solid var(--primary-text-color);
+        padding: 9px 16px;
+        border-radius: 9999px;
+      }
+    }
+
+    .delete-icon {
+      width: 24px;
+      margin-top: -7px;
+      height: 24px;
     }
   }
 }

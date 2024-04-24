@@ -1,12 +1,13 @@
 import classNames from 'classnames/bind';
 import styles from './ProductImageGallery.module.scss';
 import images from '../../assets/images';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 const cx = classNames.bind(styles);
 
 function ProductImageGallery() {
   //chon anh dang active
-  const [imageselected, setImageSelected] = useState(null);
+  const [imageSelected, setImageSelected] = useState(0);
+  const [isClicked, setIsClicked] = useState(false);
 
   const data = [
     {
@@ -33,10 +34,7 @@ function ProductImageGallery() {
                 src={item.image}
                 key={index}
                 alt=""
-                className={cx(
-                  { active: index === imageselected },
-                  { 'first-item': index == 0 && imageselected == null },
-                )}
+                className={cx({ active: index === imageSelected }, { 'first-item': index === 0 && !isClicked })}
               />
             );
           })}
@@ -47,11 +45,12 @@ function ProductImageGallery() {
             return (
               <img
                 alt=""
-                className={cx({ 'active-small': index === imageselected })}
+                className={cx({ 'active-small': index === imageSelected })}
                 src={item.image}
                 key={index}
                 onClick={() => {
                   setImageSelected(index);
+                  setIsClicked(true);
                 }}
               />
             );
