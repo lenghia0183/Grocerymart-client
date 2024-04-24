@@ -111,7 +111,7 @@ function AvatarMenu({ children, items = [] }) {
         <div className={cx('tippy-avatar-menu')}>
           <div className={cx('info-container')}>
             <div className={cx('avatar')}>
-              <img src={images.avatarTest} alt="grocerymart" />
+              <img src={images.avatarTest} alt="groceryMart" />
             </div>
 
             <div className={cx('user-info')}>

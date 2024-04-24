@@ -3,7 +3,7 @@ import styles from './PaymentProduct.module.scss';
 import images from '../../assets/images';
 import { useState } from 'react';
 import Button from '../Button';
-import { DeleteIcon, HeartIcon } from '../Icon';
+import { DecreaseIcon, DeleteIcon, HeartIcon, IncreaseIcon } from '../Icon';
 const cx = classNames.bind(styles);
 
 function PaymentProduct({ data, className }) {
@@ -18,6 +18,9 @@ function PaymentProduct({ data, className }) {
 
   const handDecrease = () => {
     setNumberProduct((pre) => {
+      if (pre === 0) {
+        return 0;
+      }
       return --pre;
     });
   };
@@ -38,7 +41,7 @@ function PaymentProduct({ data, className }) {
             <div className={cx('quantity-container')}>
               <div className={cx('quantity-inner')}>
                 <button onClick={handDecrease} className={cx('decrease-btn')}>
-                  -
+                  <DecreaseIcon/>
                 </button>
                 <input
                   className={cx('input-number-product')}
@@ -51,7 +54,7 @@ function PaymentProduct({ data, className }) {
                 />
                 <span className={cx('number-product')}>{numberProduct}</span>
                 <button onClick={handleIncrease} className={cx('increase-btn')}>
-                  +
+                  <IncreaseIcon/>
                 </button>
               </div>
             </div>

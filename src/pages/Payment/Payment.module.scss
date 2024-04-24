@@ -20,6 +20,9 @@
 .column-left-last-row {
   display: flex;
   justify-content: space-between;
+  @include media-breakpoint-down(md) {
+    margin-top: 30px;
+  }
 
   & .continue-shopping-wrapper {
     margin-top: auto;
@@ -86,6 +89,10 @@
   color: var(--primary-text-color);
   background-color: var(--payment-list-item-bg-color);
 
+  @include media-breakpoint-down(md) {
+    margin-top: 30px;
+  }
+
   & .checkout-info {
     display: flex;
     flex-direction: column;
@@ -139,10 +146,10 @@
 
   & .gift-container {
     margin-top: 30px;
-    // padding: 30px;
+
     display: flex;
     gap: 20px;
-    // width: 100%;
+
     & .gift-img {
       width: 76px;
       height: 76px;

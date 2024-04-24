@@ -4,9 +4,13 @@
 
 .wrapper {
   display: flex;
-  // justify-content: space-between;
   padding: 30px 0;
   position: relative;
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+
   &::after {
     content: '';
     width: 100%;
@@ -14,13 +18,17 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    background-color: #d2d1d6;
+    background-color: rgb(210, 209, 214, 0.5);
   }
   & img {
     width: 175px;
     height: 172px;
     object-fit: cover;
     border-radius: 15px;
+    @include media-breakpoint-down(md) {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   & .name-product {
@@ -35,6 +43,10 @@
     @include media-breakpoint-down(xxl) {
       width: fit-content;
     }
+    @include media-breakpoint-down(md) {
+      width: 100%;
+      text-align: left;
+    }
   }
 
   & input[type='number']::-webkit-inner-spin-button {
@@ -47,10 +59,24 @@
   flex-grow: 1;
   flex-wrap: wrap;
   gap: 30px;
+  @include media-breakpoint-down(md) {
+    justify-content: center;
+  }
+}
+
+.column-left {
+  @include media-breakpoint-down(md) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .price-state-container {
   margin-top: 16px;
+  @include media-breakpoint-down(md) {
+    margin-right: auto;
+  }
 
   & span {
     font-size: 1.8rem;
@@ -65,7 +91,7 @@
 
     &::after {
       content: '';
-      width: 3px;
+      width: 2px;
       height: 80%;
       position: absolute;
       right: 0px;
@@ -87,7 +113,6 @@
   margin-top: 16px;
 
   @include media-breakpoint-down(lg) {
-    flex-direction: column;
   }
 
   & .brand {
@@ -107,14 +132,15 @@
   & .quantity-container {
     width: 115px;
     height: 44px;
-
     border: 1px solid #d2d1d6;
     border-radius: 10px;
     position: relative;
+    flex-shrink: 0;
 
     & .quantity-inner {
       display: flex;
       gap: 12px;
+      align-items: center;
       position: absolute;
       left: 50%;
       top: 50%;
@@ -130,11 +156,7 @@
     & button {
       outline: none;
       background-color: transparent;
-      border: 2px solid var(--primary-text-color);
-      width: 20px;
-      height: 20px;
-      display: flex;
-      border-radius: 3px;
+      border: none;
       align-items: center;
       justify-content: center;
       color: var(--primary-text-color);
@@ -153,6 +175,9 @@
     margin-left: 0;
     align-items: flex-start;
   }
+  @include media-breakpoint-down(md) {
+    width: 100%;
+  }
 
   & .total {
     display: flex;
@@ -163,9 +188,20 @@
     @include media-breakpoint-down(xxl) {
       margin-left: 0;
     }
+    @include media-breakpoint-down(md) {
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   & .action-container {
+    display: flex;
+    gap: 20px;
+    @include media-breakpoint-down(md) {
+      margin-top: 20px;
+      margin-left: 50%;
+      transform: translateX(-50%);
+    }
     & .action-btn {
       font-size: 16px;
       font-weight: 500;

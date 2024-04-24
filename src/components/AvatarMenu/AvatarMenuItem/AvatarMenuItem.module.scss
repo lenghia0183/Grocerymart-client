@@ -18,11 +18,11 @@
   position: relative;
   &::after {
     content: '';
-    width: 100%;
+    width: calc(100% - 40px);
     height: 1px;
     position: absolute;
     bottom: -5px;
-    left: 0;
+    left: 20px;
     background-color: var(--primary-text-color);
     display: block;
   }
