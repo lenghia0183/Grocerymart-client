@@ -105,7 +105,7 @@ function AvatarMenu({ children, items = [] }) {
       // visible={true}
       // offset={auto}
       delay={[0, 500]}
-      offset={[-100, 25]}
+      offset={[-100, 20]}
       interactive={true}
       render={(attrs) => (
         <div className={cx('tippy-avatar-menu')}>

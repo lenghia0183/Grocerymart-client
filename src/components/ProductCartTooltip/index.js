@@ -1,13 +1,13 @@
 import Tippy from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css';
 
-import React from 'react';
 import Slider from 'react-slick';
 import classNames from 'classnames/bind';
 import styles from './ProductCartTooltip.module.scss';
 import { Link } from 'react-router-dom';
 import images from '../../assets/images';
 import Button from '../Button';
+
 const settings = {
   // dots: true,
   infinite: false,
@@ -37,6 +37,11 @@ const list = [
     name: 'Lavazza Coffee Blends',
     price: '$329.00',
   },
+  {
+    image: images.productCard1,
+    name: 'Lavazza Coffee Blends',
+    price: '$329.00',
+  },
 ];
 
 const cx = classNames.bind(styles);
@@ -46,7 +51,8 @@ function ProductCartTooltip({ children }) {
       interactive={true}
       // visible={true}
       // trigger="click"
-      offset={[-210, 30]}
+      arrows={true}
+      offset={[-210, 35]}
       placement="bottom"
       render={(attrs) => (
         <div className={cx('wrapper')} {...attrs}>
@@ -76,7 +82,7 @@ function ProductCartTooltip({ children }) {
           </div>
 
           <div></div>
-          
+
           <div className={cx('separate')}></div>
 
           <div className={cx('total-info')}>
