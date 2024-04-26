@@ -1,15 +1,15 @@
 .wrapper {
-  color: #9e9da8;
+  color: var(--secondary-text-color);
   font-size: 1.6rem;
   width: 100%;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
   height: 56px;
   padding-left: 30px;
   margin-bottom: 30px;
   border-radius: 10px;
-  background-color: var(--header-bg-color);
+  background-color: var(--secondary-bg-color);
 
   & .link-container {
     display: flex;
@@ -18,11 +18,15 @@
 
   & .link {
     display: block;
-    color: rgb(109, 199, 211);
+    color: var(--primary-color);
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   & .none-click {
-    color: #9e9da8;
+    color: var(--secondary-text-color);
     pointer-events: none;
     cursor: pointer;
   }

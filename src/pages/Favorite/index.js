@@ -20,7 +20,7 @@ function Favorite() {
           <ListFavorite className={cx('list-item')} />
 
           <div className={cx('action-row')}>
-            <Button to={'/'} className={cx('continue-btn')} leftIcon={<BackArrow />}>
+            <Button to={'/'} className={cx('continue-btn')} leftIcon={<BackArrow className={cx('back-arrow')} />}>
               Continue Shopping
             </Button>
 

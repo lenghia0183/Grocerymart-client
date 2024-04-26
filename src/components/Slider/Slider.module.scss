@@ -37,6 +37,13 @@
 
 :global {
   .slick-next {
+    width: 23px;
+    height: 23px;
+    &::before {
+      color: var(--next-prev-slider-color);
+      font-size: 23px;
+    }
+
     @include media-breakpoint-down(md) {
       display: none;
       &::before {
@@ -46,6 +53,13 @@
   }
 
   .slick-prev {
+    width: 23px;
+    height: 23px;
+    &::before {
+      color: var(--next-prev-slider-color);
+      font-size: 23px;
+    }
+
     @include media-breakpoint-down(md) {
       display: none;
       &::before {

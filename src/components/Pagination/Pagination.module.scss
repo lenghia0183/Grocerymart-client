@@ -2,13 +2,8 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
 
-.active {
-  color: red;
-}
-
 .pagination {
   width: fit-content;
-  // background: red;
   display: flex;
   margin: 40px auto;
   gap: 20px;
@@ -20,6 +15,7 @@
   & .page-item {
     background-color: transparent;
     border-radius: 50%;
+    transition: 0.5s;
   }
 
   & .page-link {
@@ -29,12 +25,13 @@
     border-radius: 50%;
     text-align: center;
     line-height: 40px;
-    color: var(--primary-text-color);
-    font-weight: 500;
-    border: 1px solid var(--primary-text-color);
+    color: var(--secondary-text-color);
+    font-weight: 700;
+    border: 1px solid var(--secondary-text-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
 
     @include media-breakpoint-down(lg) {
       width: 35px;
@@ -42,16 +39,21 @@
     }
 
     &:hover {
-      color: rgb(109, 199, 211);
+      color: var(--primary-color);
+      border: 1px solid var(--primary-color);
     }
   }
 
   & .active {
-    background-color: rgb(109, 199, 211, 1);
+    background-color: var(--primary-color);
 
     &:hover > .active-link {
-      color: var(--primary-text-color);
+      color: var(--pagination-text-color);
     }
+  }
+
+  & .active-link {
+    color: var(--pagination-text-color);
   }
 
   & .prev-arrow {

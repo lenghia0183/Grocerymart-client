@@ -4,7 +4,7 @@
 
 .wrapper {
   padding: 30px;
-  background-color: var(--payment-bg-color);
+  background-color: var(--primary-bg-color);
 }
 
 .payment-item {
@@ -12,7 +12,7 @@
 }
 
 .column-left {
-  background-color: var(--payment-list-item-bg-color);
+  background-color: var(--secondary-bg-color);
   padding: 30px;
   border-radius: 15px;
 }
@@ -32,7 +32,6 @@
 
     & .continue-shopping-btn {
       padding: 0;
-
       font-size: 1.8rem;
       font-weight: 500;
       color: var(--primary-text-color);
@@ -51,13 +50,13 @@
     .total-row {
       display: flex;
       justify-content: space-between;
-      color: var(--primary-text-color);
+      color: var(--third-text-color);
     }
 
     & .subtotal-row,
     .shipping-row {
-      font-size: 18px;
-      font-weight: 500;
+      font-size: 1.8rem;
+      font-weight: 600;
     }
 
     & .shipping-row {
@@ -65,17 +64,21 @@
     }
 
     & .total-row {
-      font-size: 2.2rem;
-      font-weight: 700;
       padding-top: 30px;
       position: relative;
+
+      & .total-title,
+      .total-value {
+        font-size: 2.8rem;
+        font-weight: 700;
+      }
 
       &::after {
         content: '';
         width: 100%;
         height: 1px;
         position: absolute;
-        background-color: #d2d1d6;
+        background-color: var(--primary-separate-color);
         top: 0;
         left: 0;
       }
@@ -84,13 +87,16 @@
 }
 
 .column-right {
-  border-radius: 15px;
-  padding: 30px;
   color: var(--primary-text-color);
-  background-color: var(--payment-list-item-bg-color);
 
   @include media-breakpoint-down(md) {
     margin-top: 30px;
+  }
+
+  & .checkout-container {
+    background-color: var(--secondary-bg-color);
+    padding: 40px 30px;
+    border-radius: 15px;
   }
 
   & .checkout-info {
@@ -112,18 +118,18 @@
   .checkout-price-title,
   .checkout-shipping-title,
   .checkout-total-title {
-    color: #b9babe;
-    font-size: 1.6rem;
+    color: var(--third-text-color);
+    font-size: 1.8rem;
     font-weight: 500;
   }
 
   & .checkout-subtotal-value,
   .checkout-price-value,
   .checkout-shipping-value,
-  .checkkout-total-value {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #b9babe;
+  .checkout-total-value {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--third-text-color);
   }
 
   & .checkout-total-row {
@@ -133,7 +139,7 @@
       content: '';
       width: 100%;
       height: 1px;
-      background-color: #292e39;
+      background-color: var(--primary-separate-color);
       position: absolute;
       top: 0;
       left: 0;
@@ -146,15 +152,20 @@
 
   & .gift-container {
     margin-top: 30px;
-
+    background-color: var(--secondary-bg-color);
+    padding: 40px 30px;
+    border-radius: 15px;
     display: flex;
+    align-items: center;
     gap: 20px;
+    color: var(--third-text-color);
 
     & .gift-img {
-      width: 76px;
-      height: 76px;
+      width: 80px;
+      height: 80px;
       border-radius: 14px;
-      background-color: var(--payment-bg-color);
+      flex-shrink: 0;
+      background-color: var(--gift-bg-color);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -166,13 +177,13 @@
     }
 
     & .gift-title {
-      font-size: 1.8rem;
-      font-weight: 500;
+      font-size: 2rem;
+      font-weight: 600;
     }
 
     & .gift-desc {
-      font-size: 1.4rem;
-      font-weight: 400;
+      font-size: 1.8rem;
+      font-weight: 500;
     }
   }
 }

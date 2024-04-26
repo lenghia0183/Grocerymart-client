@@ -29,7 +29,9 @@ function Footer() {
         <div className={cx('footer__inner')}>
           <div className={cx('footer__row')}>
             <div className={cx('footer__col')}>
-              <Logo />
+              <div className={cx('footer__logo-container')}>
+                <Logo />
+              </div>
 
               <p className={cx('footer__desc')}>{t('footer.desc01')}</p>
 

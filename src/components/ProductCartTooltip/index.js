@@ -24,7 +24,7 @@ const list = [
   },
   {
     image: images.productCard2,
-    name: 'Coffee Beans Espresso',
+    name: 'Coffee Beans Espresso ',
     price: '$329.00',
   },
   {
@@ -45,8 +45,8 @@ function ProductCartTooltip({ children }) {
     <Tippy
       interactive={true}
       // visible={true}
-      trigger="click"
-      offset={[-240, 30]}
+      // trigger="click"
+      offset={[-210, 30]}
       placement="bottom"
       render={(attrs) => (
         <div className={cx('wrapper')} {...attrs}>
@@ -62,9 +62,9 @@ function ProductCartTooltip({ children }) {
               {list.map((item, index) => {
                 return (
                   <div>
-                    <div className={cx('item-container')}>
+                    <div className={cx('item-container', { 'first-item-container': index === 0 })}>
                       <div className={cx('img-container')}>
-                        <img src={item.image} />
+                        <img src={item.image} alt="Grocery Mart" />
                       </div>
                       <div className={cx('name-product')}>{item.name}</div>
                       <div className={cx('price')}>{item.price}</div>
@@ -75,7 +75,9 @@ function ProductCartTooltip({ children }) {
             </Slider>
           </div>
 
-          <div className={cx('sparate')}></div>
+          <div></div>
+          
+          <div className={cx('separate')}></div>
 
           <div className={cx('total-info')}>
             <div className={cx('subtotal-row')}>
@@ -98,7 +100,7 @@ function ProductCartTooltip({ children }) {
               <div className={cx('total-value')}>$425.99</div>
             </div>
           </div>
-          <div className={cx('sparate')}></div>
+          <div className={cx('separate')}></div>
 
           <Button className={cx('checkout-btn')} rounded>
             Check Out All

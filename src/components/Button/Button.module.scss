@@ -12,6 +12,7 @@
   background-color: var(--btn-product-bg-color-primary);
   border: 1px solid transparent;
   user-select: none;
+  line-height: 0;
 
   // + .wrapper {
   //     margin-left: 19px;
@@ -82,7 +83,7 @@
   min-height: 44px;
   padding: 10px, 20px, 10px, 20px;
   border-radius: 30px;
-  background-color: #ffb700;
+  background-color: var(--secondary-color);
 }
 
 .menuTitle {

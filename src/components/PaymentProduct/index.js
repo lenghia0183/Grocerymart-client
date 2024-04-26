@@ -36,7 +36,7 @@ function PaymentProduct({ data, className }) {
             <span className={cx('state')}>{data.state}</span>
           </div>
 
-          <div className={cx('brand-quatity-container')}>
+          <div className={cx('brand-quantity-container')}>
             <div className={cx('brand')}>LavAzza</div>
             <div className={cx('quantity-container')}>
               <div className={cx('quantity-inner')}>
