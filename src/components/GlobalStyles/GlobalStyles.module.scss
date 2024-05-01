@@ -32,7 +32,7 @@
 
   //separate color
   --primary-separate-color: rgb(210, 209, 214, 1);
-
+  --secondary-separate-color: rgb(210, 209, 214, 1);
   //thumbnail bg color
   --primary-thumbnail-bg-color: #ffffff;
   --secondary-thumbnail-bg-color: #eeeeee;
@@ -118,6 +118,10 @@
     //hover color
     --primary-bg-hover-color: rgba(210, 203, 203, 0.5);
 
+    //separate color
+    --primary-separate-color: #292e39;
+    --secondary-separate-color: rgb(210, 209, 214, 1);
+
     //thumbnail bg color
     --primary-thumbnail-bg-color: #292e39;
     --secondary-thumbnail-bg-color: transparent;
@@ -126,6 +130,7 @@
 
     // --primary-text-color: #ffff;
     --header-footer-bg-color: #171c28;
+
     // header
     --header-bg-color: #171c28;
     --header-actions-group-bg-color: #292e39;
@@ -135,6 +140,7 @@
     --header-avatar-menu-bg-color: rgba(210, 203, 203, 0.4);
     // home page
     --home-page-bg-color: #292e39;
+
     // product card
     --product-card-bg-color: #171c28;
     --product-card-bg-color-hover: rgba(210, 203, 203, 0.6);

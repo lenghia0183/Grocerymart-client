@@ -8,9 +8,10 @@ const routes = {
   profile: '/profile',
   checkout: '/payment',
   favorite: '/favorite',
-  coffee: "/coffee",
-  tea: "/tea",
-  cacao: "/cacao",
+  coffee: '/coffee',
+  tea: '/tea',
+  cacao: '/cacao',
+  shipping: '/shipping',
 };
 
 export default routes;

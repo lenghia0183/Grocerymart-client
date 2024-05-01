@@ -36,7 +36,7 @@ function AvatarMenu({ children, items = [] }) {
       title: t('menu-avatar.nav02'),
       icon: <HeartIcon />,
       link: '/favorite',
-      sparate: true,
+      separate: true,
     },
     {
       title: t('menu-avatar.nav03'),
@@ -53,6 +53,7 @@ function AvatarMenu({ children, items = [] }) {
         data: [
           {
             title: t('menu-avatar.language.vi'),
+            icon: <LogoutIcon />,
             code: 'vi',
             action: () => {
               changeLanguage('vi');
@@ -60,6 +61,7 @@ function AvatarMenu({ children, items = [] }) {
           },
           {
             title: t('menu-avatar.language.en'),
+            icon: <LanguageIcon />,
             code: 'en',
             action: () => {
               changeLanguage('en');
@@ -67,7 +69,7 @@ function AvatarMenu({ children, items = [] }) {
           },
         ],
       },
-      sparate: true,
+      separate: true,
     },
     {
       title: t('menu-avatar.nav04'),

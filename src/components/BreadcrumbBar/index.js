@@ -5,12 +5,12 @@ import styles from './Breadcrumb.module.scss';
 import { ArrowRight } from '../Icon';
 
 const cx = classNames.bind(styles);
-function Breadcrumb() {
+function Breadcrumb({ className }) {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
   // console.log(pathnames);
   return (
-    <div className={cx('wrapper')}>
+    <div className={cx('wrapper', { className })}>
       <Link to="/" className={cx('link')}>
         Home
       </Link>

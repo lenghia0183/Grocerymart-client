@@ -45,7 +45,7 @@
     }
 
     @include media-breakpoint-down(md) {
-      display: none;
+      display: none !important;
       &::before {
         display: none;
       }
@@ -55,6 +55,7 @@
   .slick-prev {
     width: 23px;
     height: 23px;
+    
     &::before {
       color: var(--next-prev-slider-color);
       font-size: 23px;

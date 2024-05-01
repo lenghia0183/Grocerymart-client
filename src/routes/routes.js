@@ -10,6 +10,7 @@ import Profile from '../pages/Profile';
 import Payment from '../pages/Payment';
 import Favorite from '../pages/Favorite';
 import Coffee from '../pages/Cofffee';
+import Shipping from '../pages/Shipping';
 const publicRoutes = [
   {
     path: config.routes.home,
@@ -63,6 +64,11 @@ const publicRoutes = [
   {
     path: config.routes.cacao,
     element: Coffee,
+    layout: SecondaryLayout,
+  },
+  {
+    path: config.routes.shipping,
+    element: Shipping,
     layout: SecondaryLayout,
   },
 ];

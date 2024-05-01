@@ -1,0 +1,83 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+.wrapper {
+  background-color: var(--primary-bg-color);
+  color: var(--third-text-color);
+  padding-top: 30px;
+}
+
+
+
+.breadcrumb {
+  margin-top: 30px;
+}
+
+.separate {
+  width: 100%;
+  height: 1px;
+  background-color: var(--primary-separate-color);
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.left-column {
+  padding: 30px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 15px;
+  margin-bottom: 30px;
+
+  .left-heading {
+    font-size: 2.1rem;
+    font-weight: 600;
+  }
+
+  .user-address-top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+    @include media-breakpoint-down(lg) {
+      flex-wrap: wrap;
+    }
+
+    .add-address-btn {
+      @include media-breakpoint-down(lg) {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .list-product {
+    margin-bottom: 30px;
+  }
+}
+
+.right-column {
+  padding: 30px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 15px;
+  @include media-breakpoint-down(lg) {
+    margin-bottom: 30px;
+  }
+
+  .total-product,
+  .total-money,
+  .total-shipping,
+  .total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+
+  .total-product {
+    margin-top: 0;
+  }
+
+  .continue-payment-btn {
+    margin-top: 30px;
+  }
+}

@@ -75,7 +75,7 @@ function Payment() {
 
               <div className={cx('column-left-last-row')}>
                 <div className={cx('continue-shopping-wrapper')}>
-                  <Button className={cx('continue-shopping-btn')} leftIcon={<BackArrow />}>
+                  <Button to={'/'} className={cx('continue-shopping-btn')} leftIcon={<BackArrow />}>
                     Continue Shopping
                   </Button>
                 </div>
@@ -120,13 +120,15 @@ function Payment() {
                     <div className={cx('checkout-shipping-value')}>$10.00</div>
                   </div>
 
+                  <div className={cx('separate')}></div>
+
                   <div className={cx('checkout-total-row')}>
                     <div className={cx('checkout-total-title')}>Estimated Total</div>
                     <div className={cx('checkout-total-value')}>$201.65</div>
                   </div>
                 </div>
 
-                <Button rounded className={cx('checkout-btn')}>
+                <Button to={'/shipping'} rounded className={cx('checkout-btn')}>
                   Continue to checkout
                 </Button>
               </div>
