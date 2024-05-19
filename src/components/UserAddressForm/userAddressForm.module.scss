@@ -27,7 +27,6 @@
 
     &:hover {
       border: 1px solid var(--primary-color);
-     
     }
 
     &::placeholder {
@@ -69,6 +68,10 @@
     font-weight: 500;
     margin-left: 5px;
     color: var(--third-text-color);
+  }
+
+  & .input-disable {
+    pointer-events: none;
   }
 }
 

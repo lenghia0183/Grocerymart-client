@@ -18,51 +18,61 @@ function UserAddressForm({ onCloseForm }) {
   const [provinces, setProvinces] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [wards, setWards] = useState([]);
-  const [provinceSelected, setProvinceSelected] = useState('');
-  const [districtSelected, setDistrictSelected] = useState('');
-  const [wardSelected, setWardSelected] = useState('');
+  const [provinceSelected, setProvinceSelected] = useState({ name: '' });
+  const [districtSelected, setDistrictSelected] = useState({ name: '' });
+  const [wardSelected, setWardSelected] = useState({ name: '' });
 
+  //call api lấy province
   useEffect(() => {
     dispatch(getProvinces()).then((result) => {
-      // console.log(result);
       setProvinces(result.payload.data);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // call api lấy district
   useEffect(() => {
+    setDistrictSelected({ name: '' });
+    setWardSelected({ name: '' });
     dispatch(getDistricts({ idProvince: provinceSelected.id })).then((result) => {
       console.log(result);
       setDistricts(result.payload.data);
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [provinceSelected]);
 
+  // call api lấy ward
   useEffect(() => {
+    setWardSelected({ name: '' });
     dispatch(getWards({ idDistrict: districtSelected.id })).then((result) => {
       console.log(result);
       setWards(result.payload.data);
     });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [districtSelected]);
+
+  //handle province change
+  const handleProvinceChange = (value) => {
+    setProvinceSelected(value);
+  };
+
+  //handle district change
+  const handleDistrictChange = (value) => {
+    setDistrictSelected(value);
+  };
+
+  //handle ward change
+  const handleWardChange = (value) => {
+    setWardSelected(value);
+  };
 
   const handleResetValue = () => {
     setName('');
     setPhone('');
     setAddress('');
   };
-
-  const handleProvinceChange = (value) => {
-    setProvinceSelected(value);
-  };
-
-  const handleDistrictChange = (value) => {
-    setDistrictSelected(value);
-  };
-
-  const handleWardChange = (value) => {
-    setWardSelected(value);
-  };
-
-  // console.log(provinceSelected);
-  console.log(districtSelected);
 
   const handleValueChange = (e) => {
     const value = e.target.value;
@@ -80,6 +90,8 @@ function UserAddressForm({ onCloseForm }) {
       setAddress(value);
     }
   };
+
+  console.log('thành phố', provinceSelected.name, 'Huyện', districtSelected.name, 'xa', wardSelected.name);
 
   return (
     <div className={cx('add-address-form')}>
@@ -121,17 +133,27 @@ function UserAddressForm({ onCloseForm }) {
       <div className={cx('row')}>
         <div className={cx('form-group')}>
           <label>Thành phố</label>
-          <ComboBox options={provinces} type="province" onProvinceChange={handleProvinceChange} />
+          <ComboBox options={provinces} onChangeValue={handleProvinceChange} value={provinceSelected?.name} />
         </div>
 
         <div className={cx('form-group')}>
           <label>Huyện</label>
-          <ComboBox options={districts} type="district" onDistrictChange={handleDistrictChange} />
+          <ComboBox
+            options={districts}
+            onChangeValue={handleDistrictChange}
+            className={cx({ 'input-disable': !provinceSelected.name })}
+            value={districtSelected?.name}
+          />
         </div>
 
         <div className={cx('form-group')}>
           <label>Xã</label>
-          <ComboBox options={wards} type="ward" onWardChange={handleWardChange} />
+          <ComboBox
+            options={wards}
+            onChangeValue={handleWardChange}
+            className={cx({ 'input-disable': !districtSelected.name })}
+            value={wardSelected?.name}
+          />
         </div>
       </div>
 

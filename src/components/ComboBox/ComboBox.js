@@ -3,19 +3,28 @@ import classNames from 'classnames/bind';
 import style from './ComboBox.module.scss';
 import { ArrowRight } from '../Icon';
 const cx = classNames.bind(style);
-function ComboBox({ options, className, type, onProvinceChange, onDistrictChange, onWardChange }) {
-  const [searchTerm, setSearchTerm] = useState('');
+function ComboBox({
+  options,
+  className,
+  value,
+  onChangeValue,
+}) {
+  const [searchTerm, setSearchTerm] = useState(value);
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [selectedOption, setSelectedOption] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(options);
+  // console.log(options);
 
   const inputRef = useRef();
 
   useEffect(() => {
     setFilteredOptions(options);
   }, [options]);
+
+  useEffect(() => {
+    setSearchTerm(value);
+  }, [value]);
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -38,21 +47,10 @@ function ComboBox({ options, className, type, onProvinceChange, onDistrictChange
   };
 
   const handleSelect = (value) => {
-    setSelectedOption(value.name);
+    setSelectedOption(value);
     setSearchTerm(value.name);
     setIsOpen(false);
-    // console.log('Selected:', value);
-    // Do something with the selected value
-
-    if (type === 'province') {
-      onProvinceChange(value);
-    }
-    if (type === 'district') {
-      onDistrictChange(value);
-    }
-    if (type === 'ward') {
-      onWardChange(value);
-    }
+    onChangeValue(value);
   };
 
   const toggleOpen = () => {
