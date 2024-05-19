@@ -9,7 +9,7 @@ import { getDistricts, getProvinces, getWards } from '../../apiService/locationS
 
 const cx = classNames.bind(styles);
 
-function UserAddressForm({ onCloseForm }) {
+function UserAddressForm({ onCloseForm, isOpen }) {
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -35,7 +35,7 @@ function UserAddressForm({ onCloseForm }) {
     setDistrictSelected({ name: '' });
     setWardSelected({ name: '' });
     dispatch(getDistricts({ idProvince: provinceSelected.id })).then((result) => {
-      console.log(result);
+      // console.log(result);
       setDistricts(result.payload.data);
     });
 
@@ -46,7 +46,7 @@ function UserAddressForm({ onCloseForm }) {
   useEffect(() => {
     setWardSelected({ name: '' });
     dispatch(getWards({ idDistrict: districtSelected.id })).then((result) => {
-      console.log(result);
+      // console.log(result);
       setWards(result.payload.data);
     });
 
@@ -68,15 +68,6 @@ function UserAddressForm({ onCloseForm }) {
     setWardSelected(value);
   };
 
-  const handleResetValue = () => {
-    setName('');
-    setPhone('');
-    setAddress('');
-    setProvinceSelected({ name: '' });
-    setDistrictSelected({ name: '' });
-    setWardSelected({ name: '' });
-    
-  };
 
   const handleValueChange = (e) => {
     const value = e.target.value;
@@ -186,7 +177,6 @@ function UserAddressForm({ onCloseForm }) {
           className={cx('cancel-btn')}
           onClick={() => {
             onCloseForm();
-            handleResetValue();
           }}
         >
           Hủy

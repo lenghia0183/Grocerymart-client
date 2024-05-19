@@ -3,12 +3,7 @@ import classNames from 'classnames/bind';
 import style from './ComboBox.module.scss';
 import { ArrowRight } from '../Icon';
 const cx = classNames.bind(style);
-function ComboBox({
-  options,
-  className,
-  value,
-  onChangeValue,
-}) {
+function ComboBox({ options, className, value, onChangeValue }) {
   const [searchTerm, setSearchTerm] = useState(value);
   const [filteredOptions, setFilteredOptions] = useState(options);
   const [selectedOption, setSelectedOption] = useState();
