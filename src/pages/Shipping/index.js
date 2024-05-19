@@ -63,9 +63,11 @@ function Shipping() {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('container')}>
-        <Modal isOpen={isModalOpen} label="Thêm địa chỉ giao hàng mới" onClose={closeModal}>
-          <UserAddressForm onCloseForm={closeModal} />
-        </Modal>
+      
+          <Modal isOpen={isModalOpen} label="Thêm địa chỉ giao hàng mới" onClose={closeModal}>
+            <UserAddressForm onCloseForm={closeModal} />
+          </Modal>
+      
 
         <BreadcrumbBar className={cx('breadcrumb')} />
 

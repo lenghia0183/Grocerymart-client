@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import styles from './userAddressForm.module.scss';
 
-import { useRef, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Button from '../Button';
 import ComboBox from '../ComboBox/ComboBox';
 import { useDispatch } from 'react-redux';
@@ -72,6 +72,10 @@ function UserAddressForm({ onCloseForm }) {
     setName('');
     setPhone('');
     setAddress('');
+    setProvinceSelected({ name: '' });
+    setDistrictSelected({ name: '' });
+    setWardSelected({ name: '' });
+    
   };
 
   const handleValueChange = (e) => {
@@ -91,7 +95,7 @@ function UserAddressForm({ onCloseForm }) {
     }
   };
 
-  console.log('thành phố', provinceSelected.name, 'Huyện', districtSelected.name, 'xa', wardSelected.name);
+  // console.log('thành phố', provinceSelected.name, 'Huyện', districtSelected.name, 'xa', wardSelected.name);
 
   return (
     <div className={cx('add-address-form')}>
