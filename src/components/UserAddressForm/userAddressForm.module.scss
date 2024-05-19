@@ -1,0 +1,82 @@
+.add-address-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  width: 100%;
+  flex-grow: 1;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  flex-grow: 1;
+
+  & input[type='text'] {
+    height: 45px;
+    background-color: transparent;
+    border: 1.5px solid #d2d1d6;
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 11px;
+    color: #fff;
+
+    &::placeholder {
+      color: #d2d1d6;
+    }
+
+    &:focus {
+      border: 1.5px solid #77dae6;
+    }
+  }
+
+  & textarea {
+    background-color: transparent;
+    border: 1.5px solid #d2d1d6;
+    outline: none;
+    border-radius: 8px;
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+
+    &::placeholder {
+      color: #d2d1d6;
+    }
+    &:focus {
+      border: 1.5px solid #77dae6;
+    }
+  }
+
+  & label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+}
+
+.buttons {
+  margin-left: auto;
+  margin-top: 30px;
+}
+
+.cancel-btn {
+  font-size: 1.7rem;
+}
+
+.add-btn {
+  height: 42px;
+  padding: 10px;
+  background-color: var(--secondary-color);
+  border-radius: 8px;
+  font-size: 1.7rem;
+  //   color: var(--third-text-color);
+}
+
+.combo-box {
+  width: 30%;
+}

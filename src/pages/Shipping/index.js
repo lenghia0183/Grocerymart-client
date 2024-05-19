@@ -9,6 +9,7 @@ import images from '../../assets/images';
 import PaymentProduct from '../../components/PaymentProduct';
 // import Modal from "../../components/Modal"
 import Modal from '../../components/Modal';
+import UserAddressForm from '../../components/UserAddressForm/UserAddressForm';
 const cx = classNames.bind(styles);
 
 function Shipping() {
@@ -62,7 +63,9 @@ function Shipping() {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('container')}>
-        <Modal isOpen={isModalOpen} label="Thêm địa chỉ giao hàng mới" onClose={closeModal}></Modal>
+        <Modal isOpen={isModalOpen} label="Thêm địa chỉ giao hàng mới" onClose={closeModal}>
+          <UserAddressForm onCloseForm={closeModal} />
+        </Modal>
 
         <BreadcrumbBar className={cx('breadcrumb')} />
 
