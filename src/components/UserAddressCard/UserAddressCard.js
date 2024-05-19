@@ -12,6 +12,15 @@ function UserAddressCard() {
   const { t } = useTranslation();
 
   const [isChecked, setIsChecked] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
   const handleCheck = () => {
     setIsChecked(!isChecked);
   };

@@ -7,9 +7,19 @@ import { BackArrow, IncreaseIcon } from '../../components/Icon';
 import UserAddressCard from '../../components/UserAddressCard/UserAddressCard';
 import images from '../../assets/images';
 import PaymentProduct from '../../components/PaymentProduct';
+// import Modal from "../../components/Modal"
+import Modal from '../../components/Modal';
 const cx = classNames.bind(styles);
 
 function Shipping() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const list = [
     {
       id: 1,
@@ -52,6 +62,8 @@ function Shipping() {
   return (
     <div className={cx('wrapper')}>
       <div className={cx('container')}>
+        <Modal isOpen={isModalOpen} label="Thêm địa chỉ giao hàng mới" onClose={closeModal}></Modal>
+
         <BreadcrumbBar className={cx('breadcrumb')} />
 
         <div className={cx('row g-xl-5')}>
@@ -67,7 +79,14 @@ function Shipping() {
                     <div className={cx('user-address-title')}>Địa chỉ giao hàng</div>
                     <div className={cx('user-address-desc')}>Chúng tôi nên giao hàng cho bạn ở đâu?</div>
                   </div>
-                  <Button className={cx('add-address-btn')} rounded leftIcon={<IncreaseIcon />}>
+                  <Button
+                    className={cx('add-address-btn')}
+                    rounded
+                    leftIcon={<IncreaseIcon />}
+                    onClick={() => {
+                      openModal();
+                    }}
+                  >
                     Thêm địa chỉ mới
                   </Button>
                 </div>
