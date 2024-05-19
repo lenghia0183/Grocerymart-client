@@ -3,13 +3,19 @@ import classNames from 'classnames/bind';
 import style from './ComboBox.module.scss';
 import { ArrowRight } from '../Icon';
 const cx = classNames.bind(style);
-function ComboBox({ options, className }) {
+function ComboBox({ options, className, type, onProvinceChange, onDistrictChange, onWardChange }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredOptions, setFilteredOptions] = useState(options);
-  const [selectedOption, setSelectedOption] = useState(options[0]);
+  const [selectedOption, setSelectedOption] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log(options);
+
   const inputRef = useRef();
+
+  useEffect(() => {
+    setFilteredOptions(options);
+  }, [options]);
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -24,18 +30,29 @@ function ComboBox({ options, className }) {
   }, []);
 
   const handleSearch = (event) => {
+    setIsOpen(true);
     const term = event.target.value;
     setSearchTerm(term);
-    const filtered = options.filter((option) => option.toLowerCase().includes(term.toLowerCase()));
+    const filtered = options.filter((option) => option?.name.toLowerCase().includes(term.toLowerCase()));
     setFilteredOptions(filtered);
   };
 
   const handleSelect = (value) => {
-    setSelectedOption(value);
-    setSearchTerm(value);
+    setSelectedOption(value.name);
+    setSearchTerm(value.name);
     setIsOpen(false);
     // console.log('Selected:', value);
     // Do something with the selected value
+
+    if (type === 'province') {
+      onProvinceChange(value);
+    }
+    if (type === 'district') {
+      onDistrictChange(value);
+    }
+    if (type === 'ward') {
+      onWardChange(value);
+    }
   };
 
   const toggleOpen = () => {
@@ -44,10 +61,10 @@ function ComboBox({ options, className }) {
 
   return (
     <div className={cx('custom-combobox', className)} ref={inputRef}>
-      <div className={cx('search-container')}>
+      <div className={cx('search-container', { 'search-container-open': isOpen })}>
         <input type="text" value={searchTerm} onChange={handleSearch} onFocus={toggleOpen} placeholder="Search..." />
         <div className={cx('dropdown-toggle')} onClick={toggleOpen}>
-          <ArrowRight className={cx('arrow')} />
+          <ArrowRight className={cx('arrow', { 'arrow-show': isOpen })} />
         </div>
       </div>
 
@@ -59,7 +76,7 @@ function ComboBox({ options, className }) {
               key={index}
               onClick={() => handleSelect(option)}
             >
-              {option}
+              {option?.name}
             </li>
           ))}
         </ul>

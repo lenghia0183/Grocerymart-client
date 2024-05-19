@@ -20,7 +20,7 @@
 }
 
 .modal-content {
-  background: rgb(47, 52, 65);
+  background: var(--modal-bg-color);
   padding: 30px;
   min-height: 500px;
   border-radius: 20px;
@@ -47,16 +47,16 @@
 .modal-label {
   font-size: 2.1rem;
   font-weight: 600;
-  color: #b9babe;
+  color: var(--third-text-color);
 }
 
 .close-modal-btn {
-  font-size: 24px;
+  font-size: 2.8rem;
   cursor: pointer;
-  color: #fff;
+  color: var(--third-text-color);
 }
 
 .modal-body {
   margin-top: 20px;
-  color: #fff;
+  color: var(--third-text-color);
 }

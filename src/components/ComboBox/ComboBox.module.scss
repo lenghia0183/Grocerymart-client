@@ -7,11 +7,39 @@
   width: 100%;
   border-radius: 5px;
 
+  &-open {
+    & .arrow {
+      color: var(--primary-color) !important;
+    }
+
+    & .dropdown-toggle {
+      border: 1px solid var(--primary-color) !important;
+    }
+
+    & input {
+      border: 1px solid var(--primary-color) !important;
+    }
+  }
+
+  &:hover {
+    & .arrow {
+      color: var(--primary-color) !important;
+    }
+
+    & .dropdown-toggle {
+      border: 1px solid var(--primary-color);
+    }
+
+    & input {
+      border: 1px solid var(--primary-color);
+    }
+  }
+
   .dropdown-toggle {
     width: 40px;
     height: 40px;
     flex-shrink: 0;
-    border: 1px solid white;
+    border: 1px solid var(--primary-border-color);
     margin-left: 2px;
     display: flex;
     align-items: center;
@@ -20,22 +48,42 @@
     cursor: pointer;
 
     .arrow {
-      transform: rotate(90deg);
+      transform: rotate(-90deg);
       width: 16px;
       height: 16px;
+      transition: all 0.5s ease;
+      color: var(--primary-border-color);
+    }
+
+    .arrow-show {
+      transform: rotate(90deg);
     }
   }
 
   & input {
     height: 40px;
     background-color: transparent;
-    border: 1px solid white;
-    color: white;
+    border: 1px solid var(--primary-border-color);
+    color: var(--primary-text-color);
     outline: none;
     padding: 10px;
-    // height: 100%;
-    // flex-grow: 1;
     width: calc(100% - 42px);
+
+    // &:focus {
+    //   border: 1px solid var(--primary-color);
+
+    //   & ~ .dropdown-toggle .arrow {
+    //     color: var(--primary-color) !important;
+    //   }
+
+    //   & ~ .dropdown-toggle {
+    //     border: 1px solid var(--primary-color);
+    //   }
+    // }
+
+    &::placeholder {
+      color: var(--primary-placeholder-color);
+    }
   }
 }
 
@@ -46,9 +94,9 @@
   min-height: 0px;
   opacity: 0;
   overflow-y: scroll;
-  border: 1px solid white;
+  border: 1px solid var(--primary-border-color);
   left: 0;
-  background-color: rgb(47, 52, 65);
+  background-color: var(--combo-box-bg-color);
   z-index: 100000;
   border-radius: 5px;
   top: 43px;
@@ -76,9 +124,10 @@
     height: 45px;
     text-align: left;
     padding: 10px;
+    color: var(--primary-text-color);
 
     &:hover {
-      background-color: #292e39;
+      background-color: var(--combo-box-hover-bg-color);
       cursor: pointer;
     }
 

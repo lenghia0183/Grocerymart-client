@@ -17,6 +17,9 @@
   --pagination-text-color: #eeeeee;
   --next-prev-slider-color: #ffb700;
 
+  //placeholder color
+  --primary-placeholder-color: #9e9da8;
+
   //bg color
   --primary-bg-color: #f5f5f5;
   --secondary-bg-color: #ffffff;
@@ -24,15 +27,27 @@
   --gift-bg-color: #f1ecfc;
   --header-footer-bg-color: rgb(237, 237, 246, 0.9);
 
+  // modal bg color
+  --modal-bg-color: #ffffff;
+
+  //combo box background
+  --combo-box-bg-color: #ffffff;
+
+  //combo box hover
+  --combo-box-hover-bg-color: rgb(210, 202, 202, 0.8);
+
   // shadow color
   --primary-shadow-color: #f6edee33;
 
   //hover color
   --primary-bg-hover-color: rgb(210, 202, 202, 0.7);
 
+  //border color
+  --primary-border-color: rgb(164, 165, 173, 0.75);
+
   //separate color
   --primary-separate-color: rgb(210, 209, 214, 1);
-  --secondary-separate-color: rgb(210, 209, 214, 1);
+  --secondary-separate-color: #d2d1d6;
   //thumbnail bg color
   --primary-thumbnail-bg-color: #ffffff;
   --secondary-thumbnail-bg-color: #eeeeee;
@@ -106,11 +121,26 @@
     --pagination-text-color: rgb(41, 46, 57, 0.9);
     --next-prev-slider-color: white;
 
+    //placeholder color
+    --primary-placeholder-color: #d2d1d6;
+
     //bg color
     --primary-bg-color: #292e39;
     --secondary-bg-color: #171c28;
     --third-bg-color: #171c28;
     --gift-bg-color: #292e39;
+
+    //border color
+    --primary-border-color: rgb(210, 209, 214, 1);
+
+    // modal bg color
+    --modal-bg-color: rgb(47, 52, 65);
+
+    //combo box background
+    --combo-box-bg-color: rgb(47, 52, 65);
+
+    //combo box hover bg color
+    --combo-box-hover-bg-color: #292e39;
 
     // shadow color
     --primary-shadow-color: #f6edee33;
