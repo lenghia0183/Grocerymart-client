@@ -12,8 +12,49 @@ import Modal from '../../components/Modal';
 import UserAddressForm from '../../components/UserAddressForm/UserAddressForm';
 const cx = classNames.bind(styles);
 
+const list = [
+  {
+    id: '1',
+    image: images.categorise1,
+    name: 'Coffee Beans - Espresso Arabica and Robusta Beans',
+    price: 47.0,
+    state: 'In Stock',
+    brand: 'LavAzza',
+    quantity: 1,
+  },
+  {
+    id: '2',
+    image: images.categorise2,
+    name: 'Coffee Beans - Espresso Arabica and Robusta Beans',
+    price: 47.0,
+    state: 'In Stock',
+    brand: 'LavAzza',
+    quantity: 1,
+  },
+  {
+    id: '3',
+    image: images.categorise3,
+    name: 'Qualità Oro Mountain Grown - Espresso Coffee Beans',
+    price: 38.65,
+    state: 'In Stock',
+    brand: 'LavAzza',
+    quantity: 1,
+  },
+  {
+    id: '3',
+    image: images.categorise3,
+    name: 'Qualità Oro Mountain Grown - Espresso Coffee Beans',
+    price: 38.65,
+    state: 'In Stock',
+    brand: 'LavAzza',
+    quantity: 1,
+  },
+];
+
 function Shipping() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [productList, setProductList] = useState(list);
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -21,44 +62,19 @@ function Shipping() {
     setIsModalOpen(false);
   };
 
-  const list = [
-    {
-      id: 1,
-      image: images.categorise1,
-      name: 'Coffee Beans - Espresso Arabica and Robusta Beans',
-      price: '47.00',
-      state: 'In Stock',
-      brand: 'LavAzza',
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: images.categorise2,
-      name: 'Coffee Beans - Espresso Arabica and Robusta Beans',
-      price: '47.00',
-      state: 'In Stock',
-      brand: 'LavAzza',
-      quantity: 1,
-    },
-    {
-      id: 3,
-      image: images.categorise3,
-      name: 'Qualità Oro Mountain Grown - Espresso Coffee Beans',
-      price: '38.65',
-      state: 'In Stock',
-      brand: 'LavAzza',
-      quantity: 1,
-    },
-    {
-      id: 3,
-      image: images.categorise3,
-      name: 'Qualità Oro Mountain Grown - Espresso Coffee Beans',
-      price: '38.65',
-      state: 'In Stock',
-      brand: 'LavAzza',
-      quantity: 1,
-    },
-  ];
+  const handleQuantityChange = (productId, newQuantity) => {
+    setProductList((preList) => {
+      return preList.map((item) => {
+        return item.id === productId ? { ...item, quantity: newQuantity } : item;
+      });
+    });
+  };
+
+  const totalProducts = productList.reduce((total, product) => total + product.quantity, 0);
+  const totalPrice = productList
+    .reduce((total, product) => total + product.quantity * parseFloat(product.price), 0)
+    .toFixed(2);
+  // console.log(productList);
 
   return (
     <div className={cx('wrapper')}>
@@ -106,7 +122,14 @@ function Shipping() {
                 <div className={cx('list-product-title')}>Chi tiết các sản phẩm</div>
 
                 {list.map((item, index) => {
-                  return <PaymentProduct className={cx('payment-item')} data={item} key={index} />;
+                  return (
+                    <PaymentProduct
+                      className={cx('payment-item')}
+                      data={item}
+                      key={index}
+                      onQuantityChange={handleQuantityChange}
+                    />
+                  );
                 })}
               </div>
 
@@ -120,12 +143,12 @@ function Shipping() {
             <div className={cx('right-column')}>
               <div className={cx('total-product')}>
                 <div className={cx('total-product-label')}>Số sản phẩm:</div>
-                <div className={cx('total-product-value')}>3</div>
+                <div className={cx('total-product-value')}>{totalProducts}</div>
               </div>
 
               <div className={cx('total-money')}>
                 <div className={cx('total-money-label')}>Tổng giá tiền:</div>
-                <div className={cx('total-money-value')}>$199.99</div>
+                <div className={cx('total-money-value')}>${totalPrice}</div>
               </div>
 
               <div className={cx('total-shipping')}>
@@ -137,7 +160,7 @@ function Shipping() {
 
               <div className={cx('total')}>
                 <div className={cx('total-label')}>Thành tiền:</div>
-                <div className={cx('total-value')}>$209.99</div>
+                <div className={cx('total-value')}>{totalPrice}</div>
               </div>
 
               <Button large rounded className={cx('continue-payment-btn')}>

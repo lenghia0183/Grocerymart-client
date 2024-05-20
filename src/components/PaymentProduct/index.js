@@ -1,16 +1,17 @@
 import classNames from 'classnames/bind';
 import styles from './PaymentProduct.module.scss';
-import images from '../../assets/images';
-import { useState } from 'react';
+
+import { useState, useEffect } from 'react';
 import Button from '../Button';
 import { DecreaseIcon, DeleteIcon, HeartIcon, IncreaseIcon } from '../Icon';
 const cx = classNames.bind(styles);
 
-function PaymentProduct({ data, className }) {
+function PaymentProduct({ data, className, onQuantityChange }) {
   // console.log(data);
-  const [numberProduct, setNumberProduct] = useState(0);
+  const [numberProduct, setNumberProduct] = useState(data.quantity);
   // console.log(numberProduct);
   const handleIncrease = () => {
+    // onQuantityChange(data.id, numberProduct);
     setNumberProduct((pre) => {
       return ++pre;
     });
@@ -24,6 +25,15 @@ function PaymentProduct({ data, className }) {
       return --pre;
     });
   };
+
+  const totalPrice = () => {
+    return (data.price * numberProduct).toFixed(2);
+  };
+
+  useEffect(() => {
+    onQuantityChange(data.id, numberProduct);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [numberProduct]);
 
   return (
     <div className={cx('wrapper', { className })}>
@@ -41,7 +51,7 @@ function PaymentProduct({ data, className }) {
             <div className={cx('quantity-container')}>
               <div className={cx('quantity-inner')}>
                 <button onClick={handDecrease} className={cx('decrease-btn')}>
-                  <DecreaseIcon/>
+                  <DecreaseIcon />
                 </button>
                 <input
                   className={cx('input-number-product')}
@@ -54,14 +64,14 @@ function PaymentProduct({ data, className }) {
                 />
                 <span className={cx('number-product')}>{numberProduct}</span>
                 <button onClick={handleIncrease} className={cx('increase-btn')}>
-                  <IncreaseIcon/>
+                  <IncreaseIcon />
                 </button>
               </div>
             </div>
           </div>
         </div>
         <div className={cx('action-column')}>
-          <span className={cx('total')}>$47.00</span>
+          <span className={cx('total')}>${totalPrice()}</span>
 
           <div className={cx('action-container')}>
             <Button className={cx('action-btn')} leftIcon={<HeartIcon />}>
