@@ -11,9 +11,9 @@ function ComboBox({ options, className, value, onChangeValue }) {
 
   console.log(value);
 
-  useEffect(() => {
-    setSearchTerm(value);
-  }, []);
+  // useEffect(() => {
+  //   setSearchTerm(value);
+  // }, []);
 
   const inputRef = useRef();
 
@@ -67,7 +67,7 @@ function ComboBox({ options, className, value, onChangeValue }) {
 
       {true && (
         <ul className={cx('options-list', { 'options-list-show': isOpen })}>
-          {filteredOptions.map((option, index) => (
+          {filteredOptions?.map((option, index) => (
             <li
               className={cx({ 'selected-item': option === selectedOption })}
               key={index}
