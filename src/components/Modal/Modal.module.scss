@@ -1,3 +1,7 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -32,6 +36,14 @@
   transform: translateY(-10%);
   transition: all 0.3s ease, transform 0.3s ease;
 
+  @include media-breakpoint-down(lg) {
+    // max-height: fit-content;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 10px 30px;
+    border-radius: 0;
+  }
+
   &.content-show {
     opacity: 1;
     transform: translateY(0);
@@ -57,6 +69,5 @@
 }
 
 .modal-body {
-  margin-top: 20px;
   color: var(--third-text-color);
 }

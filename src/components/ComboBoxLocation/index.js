@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import style from './ComboBox.module.scss';
+import style from './ComboBoxLocation.module.scss';
 import { ArrowRight } from '../Icon';
 const cx = classNames.bind(style);
 function ComboBox({ options, className, value, onChangeValue }) {
@@ -9,7 +9,11 @@ function ComboBox({ options, className, value, onChangeValue }) {
   const [selectedOption, setSelectedOption] = useState();
   const [isOpen, setIsOpen] = useState(false);
 
-  // console.log(options);
+  console.log(value);
+
+  useEffect(() => {
+    setSearchTerm(value);
+  }, []);
 
   const inputRef = useRef();
 

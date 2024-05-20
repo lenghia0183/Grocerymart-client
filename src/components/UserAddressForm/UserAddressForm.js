@@ -3,13 +3,13 @@ import styles from './userAddressForm.module.scss';
 
 import { useEffect, useState } from 'react';
 import Button from '../Button';
-import ComboBox from '../ComboBox/ComboBox';
+import ComboBoxLocation from '../ComboBoxLocation';
 import { useDispatch } from 'react-redux';
 import { getDistricts, getProvinces, getWards } from '../../apiService/locationService';
 
 const cx = classNames.bind(styles);
 
-function UserAddressForm({ onCloseForm, isOpen }) {
+function UserAddressForm({ onCloseForm }) {
   const dispatch = useDispatch();
 
   const [name, setName] = useState('');
@@ -18,9 +18,9 @@ function UserAddressForm({ onCloseForm, isOpen }) {
   const [provinces, setProvinces] = useState([]);
   const [districts, setDistricts] = useState([]);
   const [wards, setWards] = useState([]);
-  const [provinceSelected, setProvinceSelected] = useState({ name: '' });
-  const [districtSelected, setDistrictSelected] = useState({ name: '' });
-  const [wardSelected, setWardSelected] = useState({ name: '' });
+  const [provinceSelected, setProvinceSelected] = useState({ name: '', id: null });
+  const [districtSelected, setDistrictSelected] = useState({ name: '', id: null });
+  const [wardSelected, setWardSelected] = useState({ name: '', id: null });
 
   //call api lấy province
   useEffect(() => {
@@ -32,23 +32,27 @@ function UserAddressForm({ onCloseForm, isOpen }) {
 
   // call api lấy district
   useEffect(() => {
-    setDistrictSelected({ name: '' });
-    setWardSelected({ name: '' });
-    dispatch(getDistricts({ idProvince: provinceSelected.id })).then((result) => {
-      // console.log(result);
-      setDistricts(result.payload.data);
-    });
+    if (provinceSelected.id) {
+      setDistrictSelected({ name: '' });
+      setWardSelected({ name: '' });
+      dispatch(getDistricts({ idProvince: provinceSelected.id })).then((result) => {
+        // console.log(result);
+        setDistricts(result.payload.data);
+      });
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [provinceSelected]);
 
   // call api lấy ward
   useEffect(() => {
-    setWardSelected({ name: '' });
-    dispatch(getWards({ idDistrict: districtSelected.id })).then((result) => {
-      // console.log(result);
-      setWards(result.payload.data);
-    });
+    if (districtSelected.id) {
+      setWardSelected({ name: '' });
+      dispatch(getWards({ idDistrict: districtSelected.id })).then((result) => {
+        // console.log(result);
+        setWards(result.payload.data);
+      });
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [districtSelected]);
@@ -67,7 +71,6 @@ function UserAddressForm({ onCloseForm, isOpen }) {
   const handleWardChange = (value) => {
     setWardSelected(value);
   };
-
 
   const handleValueChange = (e) => {
     const value = e.target.value;
@@ -128,12 +131,12 @@ function UserAddressForm({ onCloseForm, isOpen }) {
       <div className={cx('row')}>
         <div className={cx('form-group')}>
           <label>Thành phố</label>
-          <ComboBox options={provinces} onChangeValue={handleProvinceChange} value={provinceSelected?.name} />
+          <ComboBoxLocation options={provinces} onChangeValue={handleProvinceChange} value={provinceSelected?.name} />
         </div>
 
         <div className={cx('form-group')}>
           <label>Huyện</label>
-          <ComboBox
+          <ComboBoxLocation
             options={districts}
             onChangeValue={handleDistrictChange}
             className={cx({ 'input-disable': !provinceSelected.name })}
@@ -143,7 +146,7 @@ function UserAddressForm({ onCloseForm, isOpen }) {
 
         <div className={cx('form-group')}>
           <label>Xã</label>
-          <ComboBox
+          <ComboBoxLocation
             options={wards}
             onChangeValue={handleWardChange}
             className={cx({ 'input-disable': !districtSelected.name })}

@@ -1,7 +1,15 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
 .add-address-form {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-top: 20px;
+  @include media-breakpoint-down(lg) {
+    margin-top: 10px;
+  }
 }
 
 .row {
@@ -10,6 +18,11 @@
   flex-grow: 1;
   gap: 20px;
   margin-bottom: 20px;
+
+  @include media-breakpoint-down(lg) {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }
 
 .form-group {
@@ -24,6 +37,10 @@
     width: 100%;
     padding: 11px;
     color: var(--primary-text-color);
+
+    @include media-breakpoint-down(lg) {
+      height: 40px;
+    }
 
     &:hover {
       border: 1px solid var(--primary-color);
@@ -47,6 +64,10 @@
     width: 100%;
     padding: 10px;
     color: var(--primary-text-color);
+
+    @include media-breakpoint-down(lg) {
+      height: 120px;
+    }
 
     &:hover {
       border: 1px solid var(--primary-color);
@@ -78,6 +99,9 @@
 .buttons {
   margin-left: auto;
   margin-top: 30px;
+  @include media-breakpoint-down(lg) {
+    margin-top: 0;
+  }
 }
 
 .cancel-btn {
