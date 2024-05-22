@@ -32,9 +32,11 @@
 
   //combo box background
   --combo-box-bg-color: #ffffff;
+  --combo-box-secondary-bg-color: #ffffff;
 
   //combo box hover
   --combo-box-hover-bg-color: rgb(210, 202, 202, 0.8);
+  --combo-box-hover-secondary-bg-color: rgba(210, 203, 203, 0.5);
 
   // shadow color
   --primary-shadow-color: #f6edee33;
@@ -138,9 +140,11 @@
 
     //combo box background
     --combo-box-bg-color: rgb(47, 52, 65);
+    --combo-box-secondary-bg-color: #292e39;
 
     //combo box hover bg color
     --combo-box-hover-bg-color: #292e39;
+    --combo-box-hover-secondary-bg-color: rgba(210, 203, 203, 0.5);
 
     // shadow color
     --primary-shadow-color: #f6edee33;

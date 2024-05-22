@@ -7,6 +7,7 @@ import images from '../../assets/images';
 import ProductCard from '../../components/ProductCard';
 import Pagination from '../../components/Pagination';
 import { useState } from 'react';
+import ComboBox from '../../components/ComboBox';
 const cx = classNames.bind(styles);
 
 const listProduct = [
@@ -68,7 +69,25 @@ const listProduct = [
   },
 ];
 
+const priceOptions = [
+  {
+    label: 'Giá: Tăng dần',
+    value: 'asc',
+  },
+  {
+    label: 'Giá: Giảm dần',
+    value: 'desc',
+  },
+];
+
 function Coffee() {
+  const [priceOptionSelected, setPriceOptionSelected] = useState('asc');
+  const handlePriceOptionChange = (option) => {
+    setPriceOptionSelected(option.value === 'asc' ? 'asc' : 'desc');
+  };
+
+  console.log(priceOptionSelected);
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const handleOnPageChange = (value) => {
@@ -91,19 +110,12 @@ function Coffee() {
                 <div className={cx('display-option')}>Phổ biến nhất</div>
                 <div className={cx('display-option')}>Mới nhất</div>
                 <div className={cx('display-option')}>Bán chạy</div>
-
-                {/* price option */}
-                <div className={cx('price-display-option')}>
-                  <div className={cx('price-title-container')}>
-                    <div className={cx('price-title')}>Giá</div>
-                    <ArrowDown className={cx('arrow-icon')} />
-
-                    <div className={cx('price-options')}>
-                      <div className={cx('price-option')}>Giá: tăng giảm dần</div>
-                      <div className={cx('price-option')}>Giá: giảm giảm dần</div>
-                    </div>
-                  </div>
-                </div>
+                <ComboBox
+                  className={cx('price-option')}
+                  options={priceOptions}
+                  defaultOption={priceOptions[0]}
+                  onChangeOption={handlePriceOptionChange}
+                />
               </div>
             </div>
 

@@ -32,56 +32,9 @@
     background-color: var(--header-actions-group-bg-color);
     cursor: pointer;
   }
-
-  .price-display-option {
-    color: var(--primary-text-color);
+  .price-option {
+    width: 25%;
     font-size: 1.6rem;
-    font-weight: 600;
-    cursor: pointer;
-    .price-options {
-      opacity: 0;
-      visibility: hidden;
-      position: absolute;
-      bottom: -100px;
-      left: 0;
-      width: 100%;
-      background-color: var(--header-actions-group-bg-color);
-      box-shadow: 0 0 3px 1px var(--secondary-text-color);
-      z-index: 2;
-      transition: all 0.5s; /* Thêm dòng này */
-    }
-
-    .price-title-container {
-      font-size: 1.6rem;
-      font-weight: 600;
-      position: relative;
-      width: 200px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 10px;
-      background-color: var(--header-actions-group-bg-color);
-
-      &:hover > .price-options {
-        opacity: 1;
-        visibility: visible;
-      }
-
-      .price-options {
-      }
-
-      .arrow-icon {
-        width: 14px;
-        height: 14px;
-      }
-    }
-    .price-option {
-      padding: 10px 10px;
-
-      &:hover {
-        color: #77dae6;
-      }
-    }
   }
 }
 
