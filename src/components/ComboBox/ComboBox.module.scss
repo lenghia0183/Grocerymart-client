@@ -8,14 +8,29 @@
   border: 1px solid transparent;
   border-radius: 5px;
   background: var(--combo-box-secondary-bg-color);
+  transition: 0.3s ease;
   cursor: pointer;
 
   &-open {
     border: 1px solid var(--primary-color);
+    & .selected-value {
+      color: var(--primary-color) !important;
+    }
+
+    & .arrow {
+      color: var(--primary-color) !important;
+    }
   }
 
   &:hover {
     border: 1px solid var(--primary-color);
+    & .selected-value {
+      color: var(--primary-color) !important;
+    }
+
+    & .arrow {
+      color: var(--primary-color) !important;
+    }
   }
 
   .arrow {
@@ -37,9 +52,6 @@
     color: var(--primary-text-color);
     padding: 10px;
     min-width: max-content;
-    &::placeholder {
-      color: var(--primary-placeholder-color);
-    }
   }
 }
 

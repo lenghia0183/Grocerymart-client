@@ -2,7 +2,6 @@ import classNames from 'classnames/bind';
 import styles from './Coffee.module.scss';
 import BreadCrumb from '../../components/BreadcrumbBar';
 import FilterSideBar from '../../components/FilterSideBar';
-import { ArrowDown } from '../../components/Icon';
 import images from '../../assets/images';
 import ProductCard from '../../components/ProductCard';
 import Pagination from '../../components/Pagination';
@@ -80,10 +79,30 @@ const priceOptions = [
   },
 ];
 
+const displayOptions = [
+  {
+    label: 'Mới nhất',
+    value: 'newest',
+  },
+  {
+    label: 'Bán chạy nhất',
+    value: 'best-seller',
+  },
+  {
+    label: 'Đánh giá cao nhất',
+    value: 'top-rated',
+  },
+];
+
 function Coffee() {
   const [priceOptionSelected, setPriceOptionSelected] = useState('asc');
+  const [displayOptionSelected, setDisplayOptionSelected] = useState('newest');
   const handlePriceOptionChange = (option) => {
     setPriceOptionSelected(option.value === 'asc' ? 'asc' : 'desc');
+  };
+
+  const handleDisplayOptionChange = (option) => {
+    setDisplayOptionSelected(option);
   };
 
   console.log(priceOptionSelected);
@@ -107,9 +126,25 @@ function Coffee() {
             <div className={cx('container')}>
               <div className={cx('filter-bar')}>
                 <div className={cx('filter-bar-title')}>Hiển thị theo</div>
-                <div className={cx('display-option')}>Phổ biến nhất</div>
-                <div className={cx('display-option')}>Mới nhất</div>
-                <div className={cx('display-option')}>Bán chạy</div>
+
+                {/* list display option */}
+                {displayOptions.map((option) => {
+                  return (
+                    <div
+                      key={option.label}
+                      className={cx('display-option', {
+                        'display-option-selected': displayOptionSelected === option.value,
+                      })}
+                      onClick={() => {
+                        handleDisplayOptionChange(option.value);
+                      }}
+                    >
+                      {option.label}
+                    </div>
+                  );
+                })}
+
+                {/* price */}
                 <ComboBox
                   className={cx('price-option')}
                   options={priceOptions}
