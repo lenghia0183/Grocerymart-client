@@ -3,44 +3,83 @@ import classNames from 'classnames/bind';
 import styles from './ProductDetail.module.scss';
 
 import { HeartIcon, StartIcon } from '../../components/Icon';
-import { CompareIcon, DeliveryIcon, PickupIcon, SelectInputArrow } from '../../components/Icon';
+import { CompareIcon, DeliveryIcon, PickupIcon, IncreaseIcon, DecreaseIcon } from '../../components/Icon';
 import Button from '../../components/Button';
 import CustomReviewList from '../../components/CustomReviewList';
 import SimilarProductList from '../../components/SimilarProductList';
 import ProductDescription from '../../components/ProductDescription';
 import ProductImageGallery from '../../components/ProductImageGallery';
 import Breadcrumb from '../../components/BreadcrumbBar';
+import ComboBox from '../../components/ComboBox';
 
 const cx = classNames.bind(styles);
 const tabs = ['Mô tả', 'Đánh giá', 'liên quan'];
+const sizeOptions = [
+  {
+    label: 'To (5Kg)',
+    value: 'big',
+  },
+  {
+    label: 'Vừa (2kg)',
+    value: 'medium',
+  },
+  {
+    label: 'Nhỏ (1kg)',
+    value: 'small',
+  },
+];
+// const
 
 function ProductDetail() {
   const [selectUnit, setSelectUnit] = useState('g');
   const [weightOptions, setWeightOptions] = useState(['100g', '200g', '500g']);
   const [selectedTab, setSelectedTab] = useState(tabs[0]);
+  const [sizeSelected, setSizeSelected] = useState();
+
+  const [numberProduct, setNumberProduct] = useState(1);
+  // console.log(numberProduct);
+  const handleIncrease = () => {
+    // onQuantityChange(data.id, numberProduct);
+    setNumberProduct((pre) => {
+      return ++pre;
+    });
+  };
+
+  const handDecrease = () => {
+    setNumberProduct((pre) => {
+      if (pre === 0) {
+        return 0;
+      }
+      return --pre;
+    });
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleUnitChange = (e) => {
-    const unit = e.target.value;
-    setSelectUnit(unit);
+  // const handleUnitChange = (e) => {
+  //   const unit = e.target.value;
+  //   setSelectUnit(unit);
 
-    if (unit === 'g') {
-      // console.log('g');
-      setWeightOptions(['100g', '200g', '500g']);
-    } else {
-      // console.log('kg');
-      setWeightOptions(['1kg', '2kg', '5kg']);
-    }
+  //   if (unit === 'g') {
+  //     // console.log('g');
+  //     setWeightOptions(['100g', '200g', '500g']);
+  //   } else {
+  //     // console.log('kg');
+  //     setWeightOptions(['1kg', '2kg', '5kg']);
+  //   }
+  // };
+
+  const handleSizeChange = (size) => {
+    setSizeSelected(size);
   };
 
   return (
     <div>
       <div className={cx('wrapper')}>
         <div className={cx('container')}>
-          <Breadcrumb />
+          <Breadcrumb className={cx('breadcrumb')} />
           {/* <div className={cx('breadcrumb')}></div> */}
 
           <div className={cx('container')}>
@@ -65,7 +104,7 @@ function ProductDetail() {
                           <span className={cx('infor-start-rate')}>(3.5) 1100 reviews</span>
                         </div>
                         <div className={cx('size-weight-lable')}>Size/Weight</div>
-
+                        {/* 
                         <form className={cx('measure-wrapper')}>
                           <div className={cx('weight-input-wrapper')}>
                             <div className={cx('select-wrapper')}>
@@ -108,7 +147,35 @@ function ProductDetail() {
                               <label htmlFor="large">Large</label>
                             </div>
                           </div>
-                        </form>
+                        </form> */}
+
+                        <ComboBox
+                          options={sizeOptions}
+                          onChangeOption={handleSizeChange}
+                          defaultOption={sizeOptions[1]}
+                          className={cx('combo-box-size')}
+                        />
+                        <div className={cx('quantity-label')}>Quantity</div>
+                        <div className={cx('quantity-container')}>
+                          <div className={cx('quantity-inner')}>
+                            <button onClick={handDecrease} className={cx('decrease-btn')}>
+                              <DecreaseIcon className={cx('quantity-icon')} />
+                            </button>
+                            <input
+                              className={cx('input-number-product')}
+                              onChange={(e) => {
+                                setNumberProduct(e.target.value);
+                              }}
+                              value={numberProduct}
+                              type="number"
+                              inputMode="numeric"
+                            />
+                            <span className={cx('number-product')}>{numberProduct}</span>
+                            <button onClick={handleIncrease} className={cx('increase-btn')}>
+                              <IncreaseIcon className={cx('quantity-icon')} />
+                            </button>
+                          </div>
+                        </div>
                       </div>
 
                       {/* infor right */}

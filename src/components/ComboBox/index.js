@@ -32,8 +32,8 @@ function ComboBox({ options, className, defaultOption = false, value, onChangeOp
   };
 
   return (
-    <div className={cx('custom-combobox', className)} ref={inputRef}>
-      <div className={cx('value-container', { 'value-container-open': isOpen })} onClick={toggleOpen}>
+    <div className={cx('custom-combobox')} ref={inputRef}>
+      <div className={cx('value-container', className, { 'value-container-open': isOpen })} onClick={toggleOpen}>
         <div className={cx('selected-value')}>{selectedOption?.label}</div>
         <ArrowRight className={cx('arrow', { 'arrow-show': isOpen })} />
       </div>

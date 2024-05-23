@@ -165,7 +165,7 @@ function FilterSideBar() {
                     htmlFor={item}
                     className={cx('label-checkbox')}
                     onClick={() => {
-                      console.log('test');
+                      // console.log('test');
                       handleSelectedMakers(item);
                     }}
                   >

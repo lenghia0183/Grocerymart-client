@@ -10,7 +10,7 @@ function Breadcrumb({ className }) {
   const pathnames = location.pathname.split('/').filter((x) => x);
   // console.log(pathnames);
   return (
-    <div className={cx('wrapper', { className })}>
+    <div className={cx('wrapper', className)}>
       <Link to="/" className={cx('link')}>
         Home
       </Link>
