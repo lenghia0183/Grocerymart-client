@@ -80,7 +80,7 @@ function Shipping() {
     <div className={cx('wrapper')}>
       <div className={cx('container')}>
         <Modal isOpen={isModalOpen} label="Thêm địa chỉ giao hàng mới" onClose={closeModal}>
-          {/* cho component mounted và un mounted để reset dữ liệu      */}
+          {/* cho component mounted và un mounted để reset dữ liệu*/}
           {isModalOpen && <UserAddressForm onCloseForm={closeModal} />}
         </Modal>
 
